@@ -6,8 +6,17 @@
     "start": "next start"
   },
   "dependencies": {
+    "@mui/icons-material": "^5.11.16",
     "next": "latest",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-minimal-pie-chart": "^8.4.0",
+    "styled-components": "^5.3.9"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "babel-plugin-styled-components": "^2.1.1",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^1.9.6"
   }
 }
