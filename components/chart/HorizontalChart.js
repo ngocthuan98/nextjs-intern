@@ -55,11 +55,41 @@ const HorizontalStyle = styled.div`
       }
     }
   }
+  @media (max-width: 820px){
+    .Horizontal-left{
+      flex:10%;
+    }
+    .Horizontal-right {
+      flex: 90%;
+      &-span {
+        flex: 70%;
+      }
+      &-text {
+        & > p {
+          position: relative;
+          &:first-child {
+            bottom: 3px;
+            right:40px;
+          }
+          &:nth-child(2) {
+            right: 150px;
+            bottom:1.5px;
+          }
+          &:nth-child(3){
+            left: 5px;
+          }
+          &:last-child {
+            right: 47px;
+            top:4px;
+          }
+        }
+      }
+  }
 `;
 export default function HorizontalChart() {
   return (
-    <HorizontalStyle className="flex  ml-10 mt-5 gap-4  h-40">
-      <div className="Horizontal-left flex flex-col justify-between">
+    <HorizontalStyle className="flex  ml-10 mt-5 gap-4  h-40 m-max:gap-2 m-max:ml-5 m-max:mr-5">
+      <div className="Horizontal-left flex flex-col justify-between ">
         <span></span>
         <span></span>
         <span></span>

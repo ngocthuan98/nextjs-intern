@@ -2,10 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import LogoWall from "../../components/Logo/LogoWall";
 import PieCharts from "../../components/chart/PieCharts";
-import SmallCircle from "../../components/chart/SmallCircle";
+import SmallCircle from "../../components/chart/DotCircle";
 import VerticalChart from "../../components/chart/VerticalChart";
 import HorizontalChart from "../../components/chart/HorizontalChart";
-import Heading from "../../components/heading/Heading";
+import Heading from "../../components/content/Heading";
+import Section from "../../components/content/Section";
+import Details from "../../components/content/Details";
+import SecondHeading from "../../components/content/SecondHeading";
 
 const HomeStyled = styled.div`
   .header {
@@ -80,13 +83,34 @@ const HomeStyled = styled.div`
       }
     }
   }
+  @media (max-width: 915px) {
+    .header .header-right {
+      & > p:first-child {
+        font-size: 24px;
+        line-height: 36px;
+      }
+      & > p {
+        font-size: 8px;
+        line-height: 16px;
+      }
+      &-btn {
+        padding: 10px 36px;
+        margin-bottom: 5px;
+        margin-right: 0px;
+        font-size: 10px;
+      }
+      &-btn-second {
+        padding: 10px 47px;
+      }
+    }
+  }
 `;
 export default function HomePage() {
   return (
     <HomeStyled>
       <header className="header">
         <div className="container flex flex-col">
-          <div className="flex gap-32">
+          <div className="flex gap-32 m-max:gap-16">
             <div className="header-right">
               <p className="mt-12">
                 Save time by building fast with SiteB Template
@@ -105,7 +129,7 @@ export default function HomePage() {
                 <SmallCircle />
                 <HorizontalChart />
               </div>
-              <div className="header-left-dashboard-second flex gap-6">
+              <div className="header-left-dashboard-second flex gap-6 ">
                 <div className="header-left-dashboard-second-vertical">
                   <SmallCircle />
                   <VerticalChart />
@@ -120,7 +144,14 @@ export default function HomePage() {
           <LogoWall />
         </div>
       </header>
-      <Heading />
+      <section>
+        <article>
+          <Heading />
+          <Section />
+          <Details />
+          <SecondHeading />
+        </article>
+      </section>
     </HomeStyled>
   );
 }

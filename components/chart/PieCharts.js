@@ -1,27 +1,7 @@
-import { PieChart } from "react-minimal-pie-chart";
 import styled from "styled-components";
+import Circle from "./Circle";
 
 const PieStyle = styled.div`
-  .pie-chart {
-    width: 80px;
-    height: 80px;
-    position: relative;
-    top: 10px;
-    left: 25px;
-    transform: rotate(16deg);
-    &::after {
-      content: "";
-      width: 60px;
-      height: 60px;
-      background-color: #3c5368;
-      display: inline-block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 50%;
-    }
-  }
   .pie-line {
     width: 68px;
     height: 42px;
@@ -29,29 +9,40 @@ const PieStyle = styled.div`
     & > span {
       height: 8px;
       width: inherit;
-      background-color: #95ABBC;
-      border-radius:15px;
-      &:first-child{
+      background-color: #95abbc;
+      border-radius: 15px;
+      &:first-child {
         width: 64px;
       }
-      &:nth-child(2){
+      &:nth-child(2) {
         width: 60px;
       }
     }
   }
+  @media (max-width: 915px) {
+    .pie-line {
+      width: 50px;
+      height: 38px;
+      & > span {
+        height: 8px;
+        width: inherit;
+        background-color: #95abbc;
+        border-radius: 15px;
+        &:first-child {
+          width: 46px;
+        }
+        &:nth-child(2) {
+          width: 42px;
+        }
+      }
+    }
+  }
 `;
+
 export default function PieCharts() {
   return (
-    <PieStyle className="flex justify-between items-center">
-      <div className="pie-chart">
-        <PieChart
-          data={[
-            { title: "One", value: 30, color: "#0A2640" },
-            { title: "Two", value: 35, color: "#0DBBFC" },
-            { title: "Three", value: 35, color: "#69E6A6" },
-          ]}
-        />
-      </div>
+    <PieStyle className="flex justify-between items-center m-max:justify-center m-max:gap-10">
+      <Circle />
       <div className="pie-line flex justify-between items-start flex-col ">
         <span></span>
         <span></span>

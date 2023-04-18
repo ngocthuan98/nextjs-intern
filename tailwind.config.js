@@ -15,10 +15,19 @@ module.exports = {
       colors: {
         buttonGreen: "#65E4A3",
         blueDark: "#0A2640",
-        grayLight:'#777777'
+        grayLight: "#777777",
+        blueLight: "#0DBBFC",
+        pink: "#C4C4C4",
+        greenLight: "#69E6A6",
       },
       maxWidth: {
         max: "1400px",
+      },
+      screens: {
+        "m-max": { max: "915px" },
+        m: "915px",
+        "sm-max": { max: "620px" },
+        smm: "820px",
       },
     },
   },

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const FooterStyle = styled.footer`
   background-color: #fff;
-  margin: 150px 107px 0px 93px;
+  margin: 80px 107px 0px 93px;
 
   .email {
     background-color: #0a2640;
