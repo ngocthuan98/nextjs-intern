@@ -85,8 +85,8 @@ const NavbarStyled = styled.nav`
       background-color: var(--color-blueDark);
       z-index: 1;
       top: 65px;
-      right: -150px;
-      transition:all 0.5s ease;
+      right: -132px;
+      transition:all 1s ease;
     }
     .open{
       position:fixed;
@@ -95,8 +95,33 @@ const NavbarStyled = styled.nav`
       background-color: var(--color-blueDark);
       z-index: 1;
       top: 65px;
-      right: 150px;
-      transition:all 0.5s ease;
+      right: 132px;
+      transition:all 1s ease;
+    }
+  }
+  @media (max-width:715px){
+    .container{
+      margin: 27px 50px 0;
+    }
+    .navbar-second {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background-color: var(--color-blueDark);
+      z-index: 1;
+      top: 65px;
+      right: -80px;
+      transition:all 1s ease;
+    }
+    .open{
+      position:fixed;
+      width: 150px;
+      height: 150px;
+      background-color: var(--color-blueDark);
+      z-index: 1;
+      top: 65px;
+      right: 80px;
+      transition:all 1s ease;
     }
   }
 `;

@@ -41,7 +41,7 @@ const PieStyle = styled.div`
 
 export default function PieCharts() {
   return (
-    <PieStyle className="flex justify-between items-center m-max:justify-center m-max:gap-10">
+    <PieStyle className="flex justify-between items-center m-max:justify-center m-max:gap-10 sm-max:pb-5">
       <Circle />
       <div className="pie-line flex justify-between items-start flex-col ">
         <span></span>

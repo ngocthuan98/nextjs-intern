@@ -85,17 +85,55 @@ const HorizontalStyle = styled.div`
         }
       }
   }
+  @media (max-width:715px){
+    width:auto;
+    .Horizontal-left{
+      justify-content:center;
+      gap:10px;
+    }
+    .Horizontal-right{
+      display:grid;
+      grid-template-columns: 80% 20%;
+      &-span{
+        justify-content:center;
+      gap:10px;
+      }
+      &-text {
+        justify-content:center;
+        gap:10px;
+        & > p {
+          position: relative;
+          &:first-child {
+            top: 11px;
+            right:20px;
+          }
+          &:nth-child(2) {
+            right: 90px;
+            top:3px;
+          }
+          &:nth-child(3){
+            bottom:4px;
+            left: 5px;
+          }
+          &:last-child {
+            top:-12px;
+            right: 30px;
+          }
+        }
+      }
+    }
+  }
 `;
 export default function HorizontalChart() {
   return (
-    <HorizontalStyle className="flex  ml-10 mt-5 gap-4  h-40 m-max:gap-2 m-max:ml-5 m-max:mr-5">
-      <div className="Horizontal-left flex flex-col justify-between ">
+    <HorizontalStyle className="flex  ml-10 mt-5 gap-4  h-40 m-max:gap-2 m-max:ml-5 m-max:mr-5 sm-max:gap-y-1 sm-max:mt-0">
+      <div className="Horizontal-left flex flex-col justify-between">
         <span></span>
         <span></span>
         <span></span>
         <span></span>
       </div>
-      <div className="Horizontal-right flex justify-center">
+      <div className="Horizontal-right flex justify-center  ">
         <div className="Horizontal-right-span flex flex-col justify-between">
           <span></span>
           <span></span>

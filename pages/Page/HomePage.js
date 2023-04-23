@@ -5,10 +5,10 @@ import PieCharts from "../../components/chart/PieCharts";
 import SmallCircle from "../../components/chart/DotCircle";
 import VerticalChart from "../../components/chart/VerticalChart";
 import HorizontalChart from "../../components/chart/HorizontalChart";
-import Heading from "../../components/content/Heading";
-import Section from "../../components/content/Section";
-import Details from "../../components/content/Details";
-import SecondHeading from "../../components/content/SecondHeading";
+import Heading from "../../components/content/contentHome/Heading";
+import Section from "../../components/content/contentHome/Section";
+import Details from "../../components/content/contentHome/Details";
+import SecondHeading from "../../components/content/contentHome/SecondHeading";
 
 const HomeStyled = styled.div`
   .header {
@@ -20,7 +20,7 @@ const HomeStyled = styled.div`
       width: 90%;
       margin: 27px 100px 0;
     }
-    .header-right {
+    .header-left {
       flex: 50%;
       color: white;
       & > p:first-child {
@@ -57,7 +57,7 @@ const HomeStyled = styled.div`
       }
     }
   }
-  .header-left {
+  .header-right {
     flex: 50%;
     &-dashboard {
       height: 160px;
@@ -84,7 +84,8 @@ const HomeStyled = styled.div`
     }
   }
   @media (max-width: 915px) {
-    .header .header-right {
+    .header .header-left {
+      
       & > p:first-child {
         font-size: 24px;
         line-height: 36px;
@@ -104,14 +105,56 @@ const HomeStyled = styled.div`
       }
     }
   }
+  @media (max-width: 715px) {
+    .header .container {
+      width: 90%;
+      margin: 27px 50px 0;
+      &-top{
+        grid-template-columns:30% 70%;
+      }
+    }
+    .header .header-left {
+      & > p:first-child {
+        font-size: 18px;
+        line-height: 24px;
+      }
+      & > p {
+        font-size: 8px;
+        line-height: 12px;
+      }
+      &-btn {
+        padding: 8px 19px;
+        margin-left: 1px;
+        font-size: 8px;
+      }
+      &-btn-second {
+        padding: 8px 30px;
+        font-size: 8px;
+      }
+    }
+    .header-right {
+      display:grid;
+      grid-template-rows:33% 65% ;
+      &-dashboard {
+        height: 120px;
+        background-color: rgba(255, 255, 255, 0.18);
+          backdrop-filter: blur(34.3553px);
+          border-radius: 10px;
+      }
+      &-dashboard-second {
+        height: auto;
+        width: 50%;
+      }
+    }
+  }
 `;
 export default function HomePage() {
   return (
     <HomeStyled>
       <header className="header">
         <div className="container flex flex-col">
-          <div className="flex gap-32 m-max:gap-16">
-            <div className="header-right">
+          <div className="container-top flex gap-32 m-max:gap-16 sm-max:gap-x-2 sm-max:grid ">
+            <div className="header-left">
               <p className="mt-12">
                 Save time by building fast with SiteB Template
               </p>
@@ -121,20 +164,20 @@ export default function HomePage() {
                 <br /> First mover advantage innovator success deployment
                 non-disclosure.
               </p>
-              <span className="header-right-btn">Buy template</span>
-              <span className="header-right-btn-second">Explore</span>
+              <span className="header-left-btn">Buy template</span>
+              <span className="header-left-btn-second">Explore</span>
             </div>
-            <div className="header-left flex flex-col gap-6">
-              <div className="header-left-dashboard">
+            <div className="header-right flex flex-col gap-6 sm-max:gap-x-2">
+              <div className="header-right-dashboard">
                 <SmallCircle />
                 <HorizontalChart />
               </div>
-              <div className="header-left-dashboard-second flex gap-6 ">
-                <div className="header-left-dashboard-second-vertical">
+              <div className="header-right-dashboard-second flex gap-6 sm-max:grid gap-y-1">
+                <div className="header-right-dashboard-second-vertical">
                   <SmallCircle />
                   <VerticalChart />
                 </div>
-                <div className="header-left-dashboard-second-circle">
+                <div className="header-right-dashboard-second-circle">
                   <SmallCircle />
                   <PieCharts />
                 </div>

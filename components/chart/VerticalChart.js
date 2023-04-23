@@ -41,6 +41,25 @@ const VerStyle = styled.div`
       }
     }
   }
+  @media (max-width:715px){
+    margin: 5px 25px 10px;
+    & > ul {
+      width: 100px;
+      height: 60px;
+      & > li {
+        width: 7px;
+        height: 57px;
+        position:relative;
+        top:20px;
+        &:first-child {
+          top:40px; 
+        }
+        &:nth-child(2) {
+          top:30px;
+        }
+      }
+    }
+  }
 `;
 
 export default function VerticalChart() {

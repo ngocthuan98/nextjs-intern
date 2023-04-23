@@ -2,10 +2,10 @@ import styled from "styled-components";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
-import Circle from "../chart/Circle";
+import Circle from "../../chart/Circle";
 
 const SectionUp = styled.div`
-  margin: 88px 128px;
+  padding: 88px 207px 88px 138px;
   .sectionUp-left {
     position: absolute;
     height: 220px;
@@ -58,11 +58,28 @@ const SectionUp = styled.div`
       border-radius: 56px;
     }
   }
+  @media (max-width: 715px) {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 20px 100px;
+    .section-image {
+      & > img {
+        height: 200px;
+      }
+    }
+    .sectionUp-left {
+      left: 30px;
+      bottom: -122px;
+    }
+    .sectionUp-right {
+      align-items: center;
+    }
+  }
 `;
 
 const SectionDown = styled.section`
-  margin: 88px 128px;
-  .sectionDown-right {
+  padding: 0px 207px 0 138px;
+  .sectionDown-right-container {
     position: absolute;
     height: 235px;
     width: 200px;
@@ -100,8 +117,15 @@ const SectionDown = styled.section`
       }
     }
   }
-  @media (max-width: 820px) {
-    .sectionDown-right {
+  @media (max-width: 915px) {
+    .sectionDown-left {
+      &-content {
+        position: absolute;
+        top: 100px;
+        width: 100%;
+      }
+    }
+    .sectionDown-right-container {
       position: absolute;
       height: 235px;
       width: 180px;
@@ -115,13 +139,49 @@ const SectionDown = styled.section`
       }
     }
   }
+  @media (max-width: 715px) {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 20px 100px;
+    .section-image {
+      & > img {
+        width: auto;
+        height: 200px;
+      }
+    }
+    .sectionDown-left {
+      height: 260px;
+      &-content {
+        position: absolute;
+        top: 100px;
+        width: 80%;
+        & > p {
+          padding: 10px 10px 10px 10px;
+          font-size: 7px;
+        }
+      }
+    }
+    .sectionDown-right {
+      & > img {
+        height: 200px;
+      }
+      &-container {
+        width: 169px;
+        bottom: -140px;
+        left: 10px;
+        &-content > p {
+          font-size: 9px;
+        }
+      }
+    }
+  }
 `;
 
 export default function Section() {
   return (
     <section>
-      <SectionUp className="flex gap-48 ">
-        <div className="relative">
+      <SectionUp className="flex gap-32 sm-max:gap-48 ">
+        <div className="relative section-image">
           <img src="/image/img4.png" alt="" height="300" width="290" />
           <div className="sectionUp-left bg-white w-56">
             <div className="sectionUp-left-chart flex gap-3 items-end">
@@ -146,32 +206,34 @@ export default function Section() {
           <p className="text-3xl leading-10">Our Expertise</p>
           <div>
             <p className="mb-3">
-              <span className="mr-4">
+              <span className="mr-4 sm-max:mr-2">
                 <CheckCircleIcon className="w-8 h-8" />
               </span>
               Health Tech
             </p>
             <p className="mb-3">
-              <span className="mr-4">
+              <span className="mr-4 sm-max:mr-2">
                 <CheckCircleIcon className="w-8 h-8" />
               </span>
               Travel Tech
             </p>
             <p>
-              <span className="mr-4">
+              <span className="mr-4 sm-max:mr-2">
                 <CheckCircleIcon className="w-8 h-8" />
               </span>
               SAAS
             </p>
           </div>
-          <p className="sectionUp-right-button px-12 py-4 bg-blueDark text-white ">
+          <p className="sectionUp-right-button px-12 py-4 bg-blueDark text-white sm-max:px-6">
             Start now
           </p>
         </div>
       </SectionUp>
-      <SectionDown className="flex gap-32 justify-center">
-        <div className="sectionDown-left flex-1 relative">
-          <p className="text-3xl leading-10 mt-32">Benefits</p>
+      <SectionDown className="flex gap-32 justify-center sm-max:gap-0">
+        <div className="sectionDown-left flex-1 relative ">
+          <p className="text-3xl leading-10 mt-32 m-max:mt-8 sm-max:mt-16 sm-max:text-center">
+            Benefits
+          </p>
           <div className="sectionDown-left-content ">
             <p className="">
               <img
@@ -197,7 +259,7 @@ export default function Section() {
             </p>
           </div>
         </div>
-        <div className="relative flex-1">
+        <div className="sectionDown-right relative flex-1">
           <img
             src="/image/img5.png"
             alt=""
@@ -205,9 +267,9 @@ export default function Section() {
             width="290"
             className="relative"
           />
-          <div className="sectionDown-right bg-white flex flex-col justify-between ">
+          <div className="sectionDown-right-container bg-white flex flex-col justify-between sm-max:justify-around ">
             <Circle kind="secondChart" />
-            <div className="sectionDown-right-content pl-5 ">
+            <div className="sectionDown-right-container-content pl-5 ">
               <p className="mb-2">
                 <span className="w-2 h-2  mr-2  bg-blueLight inline-block rounded-md"></span>
                 35% - Agile Development

@@ -15,6 +15,10 @@ const CircleStyle = styled.div`
   & > span:last-child {
     background-color: #009d10;
   }
+  @media (max-width:715px){
+    display:grid;
+    grid-template-columns: 5% 5% 5%;
+  }
 `;
 export default function SmallCircle() {
   return (

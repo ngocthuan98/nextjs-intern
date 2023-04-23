@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import arrayArticle from "../data/DataSecondHeading";
+import arrayArticle from "../../data/DataSecondHeading";
 
 const SecondHeadingStyle = styled.div`
   .heading-font {
@@ -11,16 +11,20 @@ const SecondHeadingStyle = styled.div`
     }
   }
   .article{
-    margin: 32px 198px;
+    margin: 32px 177px;
   }
-  @media (max-width: 820px){
-    .article{
-      grid-template-columns:1fr 1fr;
+  @media (max-width: 715px){
+    padding: 0px 50px 30px;
+    .heading-font {
+      margin: 0px auto 30px;
+      line-height: 36px;
     }
-  }
-  @media (max-width: 610px){
     .article{
-      grid-template-columns:1fr;
+      margin:32px 0;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
     }
   }
 `;
@@ -29,14 +33,14 @@ export default function SecondHeading() {
   return (
     <SecondHeadingStyle>
       <div className="text-center">
-        <p className="font-openSans mt-12  text-lg font-normal leading-8 text-grayLight">
+        <p className="font-openSans mt-12  text-xl font-normal leading-8 text-grayLight">
           Our Services
         </p>
         <p className="heading-font text-5xl font-normal ">
           Value proposition accelerator product management venture
         </p>
       </div>
-      <article className="article grid  grid-cols-3  gap-16">
+      <article className="article grid  grid-cols-3  gap-24  m-max:grid-cols-2 m-max:gap-10  ">
         {arrayArticle.map((data) => {
           return (
             <div className="heading-detail flex flex-col" key={data.id}>

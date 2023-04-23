@@ -4,9 +4,9 @@
 
 :root {
   --font-OpenSans: "Open Sans", sans-serif;
-  --color-green:#65E4A3;
-  --color-blueDark:#0A2640;
-  --color-gray:#777777;
+  --color-green: #65e4a3;
+  --color-blueDark: #0a2640;
+  --color-gray: #777777;
   box-sizing: border-box;
 }
 html,
@@ -17,7 +17,7 @@ body {
     Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   line-height: 1.6;
   font-size: 11px;
-  max-width: 1024px;
+  max-width: 1400px;
 }
 
 a {

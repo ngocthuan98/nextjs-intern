@@ -1,12 +1,11 @@
 import styled from "styled-components";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import arrayDetail from "../data/DataDetails";
+import arrayDetail from "../../data/DataDetails";
 
 const DetailStyle = styled.div`
   margin: 160px 0 60px;
   padding: 60px 80px 60px 130px;
-  height: auto;
   background-color: var(--color-blueDark);
   color: white;
   .container-detail {
@@ -31,14 +30,45 @@ const DetailStyle = styled.div`
       height: auto;
       &-author {
         border-radius:12px;
-        height:auto;
-        width: calc(100% / 3);
+        // height:auto;
         padding: 25px 49px;
         &:nth-child(1) {
           height: 199px;
         }
         &:nth-child(3) {
           height: 222px;
+        }
+      }
+    }
+  }
+  @media (max-width:915px){
+    .container-detail{
+      & > p {
+        margin-right: 220px;
+        line-height: 36px;
+      }
+    }
+  }
+  @media (max-width:715px){
+    padding: 60px 50px;
+    .container-detail{
+      & > p {
+        margin-right: 50px;
+        line-height: 36px;
+      }
+      &-content {
+        width: 100%;
+        height: auto;
+        &-author {
+          border-radius:12px;
+          // height:auto;
+          padding: 25px 49px;
+          &:nth-child(1) {
+            height: auto;
+          }
+          &:nth-child(3) {
+            height: auto;
+          }
         }
       }
     }
@@ -59,7 +89,7 @@ export default function Details() {
           <ArrowBackIcon />
         </span>
       </div>
-      <article className="container-detail-content mt-24 flex justify-between gap-8 ">
+      <article className="container-detail-content mt-24 grid grid-cols-3 gap-x-10 m-max:grid-cols-2 sm-max:grid-cols-1 gap-y-5 ">
         {arrayDetail.map((detail) => {
           return (
             <div

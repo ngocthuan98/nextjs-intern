@@ -5,15 +5,18 @@ const LogoStyle = styled.div`
   height: auto;
   margin: 42px 0;
   position: relative;
-  .image{
+
+  .image {
     width: 98px;
     height: 30px;
   }
-  .logoWall{
-    gap:46px;
+  .wallLogo {
+    gap: 46px;
   }
   .bg-img {
     position: absolute;
+    width: 100%;
+    height: 40px;
     background-image: linear-gradient(
       90deg,
       #0a2640 0%,
@@ -21,24 +24,23 @@ const LogoStyle = styled.div`
       rgba(10, 38, 64, 0) 72.89%,
       #0a2640 97.87%
     );
-    width: 100%;
-    height: 40px;
   }
   @media (max-width: 915px) {
-    .logoWall{
-      gap:30px;
+    .logoWall {
+      gap: 30px;
     }
-    .image{
+    .image {
       width: 78px;
       height: 20px;
     }
   }
+
 `;
 
 export default function LogoWall() {
   return (
     <LogoStyle className="flex">
-      <div className=" logoWall flex justify-between overflow-hidden">
+      <div className="wallLogo flex justify-between overflow-hidden">
         <img className="image" src={`/Logo_2.png`} alt="logo" quality="100" />
         <img className="image" src={`/Logo.png`} alt="logo" quality="100" />
         <img className="image" src={`/Logo_2.png`} alt="logo" quality="100" />

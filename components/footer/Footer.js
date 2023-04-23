@@ -4,7 +4,6 @@ import styled from "styled-components";
 const FooterStyle = styled.footer`
   background-color: #fff;
   margin: 80px 107px 0px 93px;
-
   .email {
     background-color: #0a2640;
     height: auto;
@@ -98,8 +97,8 @@ const FooterStyle = styled.footer`
     .careers {
       &::after {
         content: "Hiring!";
-        position:relative;
-        left:10px;
+        position: relative;
+        left: 10px;
         padding: 3.5px 8px;
         font-weight: 700;
         color: var(--color-blueDark);
@@ -110,21 +109,123 @@ const FooterStyle = styled.footer`
       }
     }
   }
+  @media (max-width: 915px) {
+    .email {
+      padding: 42px 0px 0;
+      &-input {
+        width: 170px;
+        height: 40px;
+        margin-left: 35px;
+        margin-bottom: 40px;
+        padding-left: 10px;
+        font-size: 10px;
+        &::placeholder {
+          font-size: 10px;
+        }
+      }
+      &-btn {
+        padding: 10px 30px;
+        background-color: #65e4a3;
+        border: 2px solid #65e4a3;
+        border-radius: 56px;
+        font-family: var(--font-OpenSans);
+        margin-left: 15px;
+      }
+    }
+    .footer-container{
+      margin-top:60px;
+    }
+  }
+  @media (max-width:715px){
+    margin: 80px 50px 0px ;
+    .email {
+      padding: 42px 0px 0;
+      &-input {
+        display:block;
+        width: 170px;
+        height: 40px;
+        margin:0 auto;
+        padding-left: 10px;
+        font-size: 10px;
+        &::placeholder {
+          font-size: 10px;
+        }
+      }
+      & > p {
+        margin-bottom: 10px;
+      }
+      &-btn {
+        display:inline-block;
+        padding: 10px 30px;
+        margin:20px auto;
+        background-color: #65e4a3;
+        border: 2px solid #65e4a3;
+        border-radius: 56px;
+        font-family: var(--font-OpenSans);
+      }
+    }
+    .footer-container{
+      display:grid;
+      grid-template-columns:30% 70%;
+      height:230px;
+      .logo {
+        height: 30px;
+        width: 80px;
+        & > p {
+          font-size: 23.25px;
+          left: 20.18px;
+          top: -4px;
+        }
+        & > span {
+          width: 12.02px;
+          height: 8.26px;
+        }
+        & > span::after {
+          width: 14.91px;
+          height: 8.68px;
+        }
+      }
+      &-left{
+        width:auto;
+      }
+      &-right {
+        width: auto;
+        height: aut;
+        gap:10px;
+        justify-content:space-evenly;
+        font-family: var(--font-OpenSans);
+        & > ul {
+          width: auto;
+          font-weight: 700;
+          margin-top:-15px;
+          & > li:first-child {
+            margin-top: 10px;
+          }
+        }
+      }
+      .careers {
+        &::after {
+          left: 5px;
+          font-size: 7px;
+        }
+      }
+    }
+  }
 `;
 export default function Footer() {
   return (
     <FooterStyle>
       <div className="email flex flex-col">
-        <p className="text-5xl text-white text-center">
+        <p className="text-5xl text-white text-center m-max:text-3xl sm-max:text-xl">
           An enterprise template to ramp up your company website
         </p>
-        <div>
+        <div className="text-center">
           <input placeholder="Your email address" className="email-input " />
-          <span className="email-btn font-bold">Start now</span>
+          <span className="email-btn font-bold ">Start now</span>
         </div>
       </div>
-      <div className="footer-container flex items-center justify-start">
-        <div className="footer-container-left mr-32">
+      <div className="footer-container flex items-center justify-start  ">
+        <div className="footer-container-left mr-32 m-max:mr-12 sm-max:mr-2">
           <logo className="logo inline-block">
             <span></span>
             <p>SiteB</p>
@@ -135,8 +236,8 @@ export default function Footer() {
           </p>
           <p className="mt-10">All rights reserved.</p>
         </div>
-        <div className="footer-container-right flex gap-24">
-          <ul className="flex flex-col justify-between leading-9">
+        <div className="footer-container-right flex gap-24 ">
+          <ul className="flex flex-col justify-between leading-9 ">
             Landings
             <li>Home</li>
             <li>Products</li>

@@ -19,6 +19,7 @@ module.exports = {
         blueLight: "#0DBBFC",
         pink: "#C4C4C4",
         greenLight: "#69E6A6",
+        lightWhite:"#F1F1F1"
       },
       maxWidth: {
         max: "1400px",
@@ -26,7 +27,7 @@ module.exports = {
       screens: {
         "m-max": { max: "915px" },
         m: "915px",
-        "sm-max": { max: "620px" },
+        "sm-max": { max: "715px" },
         smm: "820px",
       },
     },
