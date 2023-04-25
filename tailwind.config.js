@@ -1,11 +1,11 @@
 module.exports = {
-  mode: "jit",
-  purge: [
-    "./app/**/*.{js,ts,jsx,tsx}", // Note the addition of the `app` directory.
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+
     // Or if using `src` directory:
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -19,7 +19,7 @@ module.exports = {
         blueLight: "#0DBBFC",
         pink: "#C4C4C4",
         greenLight: "#69E6A6",
-        lightWhite:"#F1F1F1"
+        lightWhite: "#F1F1F1",
       },
       maxWidth: {
         max: "1400px",
@@ -29,6 +29,7 @@ module.exports = {
         m: "915px",
         "sm-max": { max: "715px" },
         smm: "820px",
+        lg: "1400px",
       },
     },
   },

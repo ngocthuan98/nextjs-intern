@@ -45,7 +45,7 @@ export default function SecondHeading() {
           return (
             <div className="heading-detail flex flex-col" key={data.id}>
               <img src={data.image} alt="" />
-              <p className="font-openSans text-sm leading-7 font-bold mt-6">
+              <p className="font-openSans text-sm leading-7 font-bold mt-6 text-blueDark">
                 {data.title}
                 <span className="ml-2 font-normal text-grayLight">
                   November 22,2021

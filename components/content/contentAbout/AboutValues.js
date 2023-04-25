@@ -69,7 +69,7 @@ export default function AboutValues({ kind }) {
       <div className="Values grid grid-rows-3 gap-10 ">
         {arrayValues.map((value) => {
           return (
-            <div className="Values-item gap-8 sm-max:gap-4">
+            <div key={value.id} className="Values-item gap-8 sm-max:gap-4 ">
               <img src={value.image} alt="value" className="rounded-2xl" />
               <div className="flex flex-col justify-round gap-8 sm-max:gap-4">
                 <p className="text-2xl sm-max:text-base">{value.title}</p>

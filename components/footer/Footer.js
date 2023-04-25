@@ -226,10 +226,10 @@ export default function Footer() {
       </div>
       <div className="footer-container flex items-center justify-start  ">
         <div className="footer-container-left mr-32 m-max:mr-12 sm-max:mr-2">
-          <logo className="logo inline-block">
+          <div className="logo inline-block">
             <span></span>
             <p>SiteB</p>
-          </logo>
+          </div>
           <p>
             Social media validation business model canvas graphical user
             interface launch party creative facebook iPad twitter.

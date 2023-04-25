@@ -8,9 +8,10 @@ const NavbarStyled = styled.nav`
   background-color: #0a2640;
   display: flex;
   justify-content: center;
+  font-size:16px;
   .container {
     width: 90%;
-    margin: 27px 100px 0;
+    margin: 56px 100px 0;
     &-navbar {
       width: 100%;
     }
@@ -19,19 +20,20 @@ const NavbarStyled = styled.nav`
     height: 42px;
     width: 162.22px;
     position: relative;
-    top: 7px;
+    // top: 7px;
     & > p {
       font-weight: 700;
       display: inline-block;
-      font-size: 37.25px;
+      font-size: 43.25px;
+      line-height: 34px;
       position: absolute;
-      left: 30.18px;
-      top: -15px;
+      left: 22.92%;
+      // top: -15px;
     }
     & > span {
       display: inline-block;
       width: 18.02px;
-      height: 11.26px;
+      height: 13.26px;
       background-color: var(--color-green);
       border-radius: 0px 12.0139px 12.0139px 0px;
     }
@@ -39,16 +41,18 @@ const NavbarStyled = styled.nav`
       content: "";
       display: block;
       position: absolute;
-      top: 16px;
-      width: 23.91px;
-      height: 13.68px;
+      top: 21px;
+      width: 25.91px;
+      height: 17.68px;
       background-color: var(--color-green);
       border-radius: 0px 12.0139px 12.0139px 0px;
     }
   }
   .menu {
     font-weight: 600;
+    gap:40px;
     font-family: var(--font-OpenSans);
+    line-height: 28px;
     &-item-contact {
       border: 2px solid #ffffff;
       border-radius: 24px;
@@ -150,43 +154,6 @@ const NavbarStyled = styled.nav`
       transition: all 1s ease;
     }
   }
-  @media (min-width: 1400px) {
-    font-size: 16px;
-    .container {
-      width: 90%;
-      margin: 56px 100px 0;
-    }
-    .logo {
-      height: 42px;
-      width: 162.22px;
-      top: 7px;
-      & > p {
-        font-size: 43.25px;
-        line-height: 34px;
-        position: absolute;
-        left: 22.92%;
-        top: 0px;
-      }
-      & > span {
-        position: absolute;
-        top: 2px;
-        width: 18.02px;
-        height: 13.26px;
-      }
-      & > span::after {
-        top: 16px;
-        width: 25.91px;
-        height: 17.68px;
-      }
-    }
-    .menu {
-      gap: 40px;
-      line-height: 28px;
-      &-item-contact {
-        padding: 8px 40px;
-      }
-    }
-  }
 `;
 export default function Navbar({ blog }) {
   const [openLinks, setOpenLinks] = useState();
@@ -204,7 +171,7 @@ export default function Navbar({ blog }) {
               <p>SiteB</p>
             </div>
           </Link>
-          <ul className="menu flex items-center gap-10">
+          <ul className="menu flex items-center">
             <li className="menu-item">
               <Link href="/Page/Blog">Blog</Link>
             </li>

@@ -1,4 +1,4 @@
-import React from "react";
+import Layout from "../../components/layout/Layout";
 import styled from "styled-components";
 import LogoWall from "../../components/Logo/LogoWall";
 import PieCharts from "../../components/chart/PieCharts";
@@ -85,7 +85,6 @@ const HomeStyled = styled.div`
   }
   @media (max-width: 915px) {
     .header .header-left {
-      
       & > p:first-child {
         font-size: 24px;
         line-height: 36px;
@@ -109,8 +108,8 @@ const HomeStyled = styled.div`
     .header .container {
       width: 90%;
       margin: 27px 50px 0;
-      &-top{
-        grid-template-columns:30% 70%;
+      &-top {
+        grid-template-columns: 30% 70%;
       }
     }
     .header .header-left {
@@ -133,13 +132,13 @@ const HomeStyled = styled.div`
       }
     }
     .header-right {
-      display:grid;
-      grid-template-rows:33% 65% ;
+      display: grid;
+      grid-template-rows: 33% 65%;
       &-dashboard {
         height: 120px;
         background-color: rgba(255, 255, 255, 0.18);
-          backdrop-filter: blur(34.3553px);
-          border-radius: 10px;
+        backdrop-filter: blur(34.3553px);
+        border-radius: 10px;
       }
       &-dashboard-second {
         height: auto;
@@ -147,54 +146,96 @@ const HomeStyled = styled.div`
       }
     }
   }
+  @media (min-width: 1400px) {
+    .header .container {
+      margin: 65px 100px 0;
+    }
+    .header .header-left {
+      & > p:first-child {
+        font-size: 48px;
+        line-height: 72px;
+        margin-top: 0px;
+      }
+      & > p {
+        margin-top: 8px;
+        font-size: 16px;
+        line-height: 28px;
+      }
+      &-btn {
+        padding: 16px 56px;
+        margin-right: 24px;
+        font-size: 20px;
+        line-height: 28px;
+      }
+      &-btn-second {
+        padding: 16px 56px;
+        font-size: 20px;
+        line-height: 28px;
+      }
+    }
+    .header-right {
+      flex:40%;
+      &-dashboard {
+        width: inherit;
+        height: 231.9px;
+      }
+      &-dashboard-second {
+        width: inherit;
+      }
+    }
+  }
 `;
 export default function HomePage() {
   return (
-    <HomeStyled>
-      <header className="header">
-        <div className="container flex flex-col">
-          <div className="container-top flex gap-32 m-max:gap-16 sm-max:gap-x-2 sm-max:grid ">
-            <div className="header-left">
-              <p className="mt-12">
-                Save time by building fast with SiteB Template
-              </p>
-              <p>
-                Funding handshake buyer business-to-business metrics iPad
-                partnership.
-                <br /> First mover advantage innovator success deployment
-                non-disclosure.
-              </p>
-              <span className="header-left-btn">Buy template</span>
-              <span className="header-left-btn-second">Explore</span>
-            </div>
-            <div className="header-right flex flex-col gap-6 sm-max:gap-x-2">
-              <div className="header-right-dashboard">
-                <SmallCircle />
-                <HorizontalChart />
-              </div>
-              <div className="header-right-dashboard-second flex gap-6 sm-max:grid gap-y-1">
-                <div className="header-right-dashboard-second-vertical">
-                  <SmallCircle />
-                  <VerticalChart />
-                </div>
-                <div className="header-right-dashboard-second-circle">
-                  <SmallCircle />
-                  <PieCharts />
+    <Layout>
+      <HomeStyled>
+        <header className="header">
+          <div className="container flex flex-col">
+            <div className="container-top flex  gap-32 m-max:gap-16 sm-max:gap-x-2 sm-max:grid lg:justify-between lg:gap-[93px]">
+              <div className="header-left lg:mt-[56px] lg:w-[567px] lg:h-[310px] lg:pr-20">
+                <p className="mt-12">
+                  Save time by building fast with SiteB Template
+                </p>
+                <p>
+                  Funding handshake buyer business-to-business metrics iPad
+                  partnership.
+                  <br /> First mover advantage innovator success deployment
+                  non-disclosure.
+                </p>
+                <div>
+                  <span className="header-left-btn">Buy template</span>
+                  <span className="header-left-btn-second">Explore</span>
                 </div>
               </div>
+              <div className="header-right flex flex-col gap-6 sm-max:gap-x-2 lg:w-[493.86px] lg:text-[16px]">
+                <div className="header-right-dashboard ">
+                  <SmallCircle />
+                  <HorizontalChart />
+                </div>
+                <div className="header-right-dashboard-second flex gap-6 sm-max:grid gap-y-1 lg:!h-[165.34px]">
+                  <div className="header-right-dashboard-second-vertical">
+                    <SmallCircle />
+                    <VerticalChart />
+                  </div>
+                  <div className="header-right-dashboard-second-circle">
+                    <SmallCircle />
+                    <PieCharts />
+                  </div>
+                </div>
+              </div>
             </div>
+            <LogoWall />
           </div>
-          <LogoWall />
-        </div>
-      </header>
-      <section>
-        <article>
-          <Heading />
-          <Section />
-          <Details />
-          <SecondHeading />
-        </article>
-      </section>
-    </HomeStyled>
+        </header>
+        <section>
+          <article>
+            <Heading />
+            <Section />
+            <Details />
+            <SecondHeading />
+          </article>
+        </section>
+      </HomeStyled>
+    </Layout>
   );
 }
