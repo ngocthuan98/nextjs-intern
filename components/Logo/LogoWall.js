@@ -26,7 +26,7 @@ const LogoStyle = styled.div`
     );
   }
   @media (max-width: 915px) {
-    .logoWall {
+    .wallLogo {
       gap: 30px;
     }
     .image {
@@ -34,7 +34,18 @@ const LogoStyle = styled.div`
       height: 20px;
     }
   }
-
+  @media (min-width: 1400px) {
+    .wallLogo {
+      gap: 66px;
+    }
+    .image {
+      width: 145px;
+      height: 42px;
+    }
+    .bg-img {
+      height: 42px;
+    }
+  }
 `;
 
 export default function LogoWall() {

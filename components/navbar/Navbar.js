@@ -104,6 +104,15 @@ const NavbarStyled = styled.nav`
       border: 1px solid;
       border-radius: 2px;
     }
+    ${(props) =>
+      props.blog === "blog" &&
+      ` .menu-second {
+        color:
+      }
+      .navbar-button {
+        color: black;
+      }
+      `}
     .navbar-second {
       position: absolute;
       width: 150px;
@@ -205,13 +214,13 @@ export default function Navbar({ blog }) {
             </div>
           </Link>
           <ul className="menu flex items-center gap-10">
-            <li className="menu-item">
-              <Link href="/Page/Blog">Blog</Link>
+            <li className="menu-item text-white">
+              <Link href="/Page/Blog ">Blog</Link>
             </li>
-            <li className="menu-item">
+            <li className="menu-item text-white">
               <Link href="/Page/Services">Services</Link>
             </li>
-            <li className="menu-item">
+            <li className="menu-item text-white">
               <Link href="/Page/About">About</Link>
             </li>
             <li className="menu-item-contact px-10 py-2 bg-white">Contact</li>
@@ -222,14 +231,14 @@ export default function Navbar({ blog }) {
                 openLinks ? "open" : "navbar-second"
               }  flex flex-col items-center justify-evenly`}
             >
-              <li className="menu-item">
-                <Link href="/Page/Blog">Blog</Link>
+              <li className="menu-item ">
+                <Link className="!text-white" href="/Page/Blog">Blog</Link>
               </li>
-              <li className="menu-item">
-                <Link href="/Page/Services">Services</Link>
+              <li className="menu-item ">
+                <Link className="!text-white" href="/Page/Services">Services</Link>
               </li>
-              <li className="menu-item">
-                <Link href="/Page/About">About</Link>
+              <li className="menu-item ">
+                <Link className="!text-white" href="/Page/About">About</Link>
               </li>
               <li className="menu-item-contact px-4 py-1 bg-white ">Contact</li>
             </ul>

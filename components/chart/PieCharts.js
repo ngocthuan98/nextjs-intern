@@ -37,6 +37,22 @@ const PieStyle = styled.div`
       }
     }
   }
+  @media (min-width:1400px){
+    .pie-line {
+      width: 76px;
+      height: 52px;
+      margin: 45.93px 31.96px 0 0;
+      & > span {
+        height: 8px;
+        &:first-child {
+          width: 72px;
+        }
+        &:nth-child(2) {
+          width: 68px;
+        }
+      }
+    }
+  }
 `;
 
 export default function PieCharts() {

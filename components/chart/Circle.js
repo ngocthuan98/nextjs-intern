@@ -56,6 +56,29 @@ const Chart = styled.div`
         `}
     }
   }
+  @media (min-width: 1400px) {
+    width: 93.04px;
+    height: 93.04px;
+    top: 24.77px;
+    left: 28.26px;
+    ${(props) =>
+      props.kind === "secondChart" &&
+      `
+        width: 100px;
+        height: 100px;
+      `}
+    &::after {
+      width: 63px;
+      height: 63px;
+      ${(props) =>
+        props.kind === "secondChart" &&
+        `
+          width: 70px;
+          height: 70px;
+          background-color: white;
+        `}
+    }
+  }
 `;
 export default function Circle({ kind }) {
   return (

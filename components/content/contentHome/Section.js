@@ -75,6 +75,44 @@ const SectionUp = styled.div`
       align-items: center;
     }
   }
+  @media (min-width:1400px){
+    .sectionUp-left {
+    bottom: -100px;
+    left: 192px;
+    .sectionUp-left-chart {
+      & > span {
+        width: 170px;
+        height: 227.21px;
+        &:first-child {
+          top: 50px;
+          height: 49.74px;
+        }
+        &:nth-child(2) {
+          top: 29px;
+          height: 28.83px;
+        }
+        &:nth-child(3) {
+          height: 133.39px;
+        }
+        &:nth-child(4) {
+          height: 92.13px;
+        }
+        &:nth-child(5) {
+          height:177.47px;
+          background-color: var(--color-blueDark);
+        }
+        &:nth-child(6) {
+          height: 125.47px;
+        }
+        &:nth-child(7) {
+          height: 149.78px;
+        }
+        &:last-child {
+          height: 68.39px;
+        }
+      }
+    }
+  }
 `;
 
 const SectionDown = styled.section`
@@ -180,11 +218,11 @@ const SectionDown = styled.section`
 export default function Section() {
   return (
     <section>
-      <SectionUp className="flex gap-32 sm-max:gap-48 ">
+      <SectionUp className="flex gap-32 sm-max:gap-48  lg:!pt-[0px] lg:!pr-[0px] lg:!pb-[224px] lg:!pl-[156px] lg:gap-[150px]">
         <div className="relative section-image">
-          <img src="/image/img4.png" alt="" height="300" width="290" />
-          <div className="sectionUp-left bg-white w-56">
-            <div className="sectionUp-left-chart flex gap-3 items-end">
+          <img src="/image/img4.png" alt="" height="300" width="290" className="lg:w-[494px] lg:h-[506px]"/>
+          <div className="sectionUp-left bg-white w-56 lg:w-[251px] lg:!h-[388px] lg:!p-[40px]">
+            <div className="sectionUp-left-chart flex gap-3 items-end lg:gap-[11px]">
               <span></span>
               <span></span>
               <span></span>
@@ -194,10 +232,10 @@ export default function Section() {
               <span></span>
               <span></span>
             </div>
-            <p className="mt-16 text-blueDark text-2xl font-bold leading-8">
+            <p className="mt-16 text-blueDark text-2xl font-bold leading-8 lg:mt-[70px] lg:text-[24px] lg:leading-[36.27px]">
               30%
             </p>
-            <p className="font-normal text-sm text-blueDark leading-6">
+            <p className="font-normal text-sm text-blueDark leading-6 lg:text-[14px] lg:leading-[24px]">
               More income in June
             </p>
           </div>

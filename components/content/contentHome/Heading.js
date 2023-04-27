@@ -64,35 +64,50 @@ const HeadingStyle = styled.div`
       line-height: 42px;
     }
   }
+  @media (min-width: 1400px) {
+    .heading-article {
+      margin: 78px 150px 197px;
+    }
+    .heading-detail {
+      width: 300px;
+      height: 563px;
+      &-explore {
+        & > svg {
+          width: 24px;
+          height: 26px;
+        }
+      }
+    }
+  }
 `;
 
 export default function Heading({ kind }) {
   return (
     <HeadingStyle kind={kind}>
       <div className="heading-content text-center">
-        <p className="font-openSans pt-8  text-xl font-normal leading-8 text-grayLight">
+        <p className="font-openSans pt-8  text-xl font-normal leading-8 text-grayLight lg:text-[20px] lg:leading-[32px]">
           Our Services
         </p>
-        <p className="heading-font text-5xl font-normal sm-max:text-2xl sm-max:text-center ">
+        <p className="heading-font text-5xl font-normal sm-max:text-2xl sm-max:text-center lg:text-[48px] lg:!leading-[72px] lg:!mx-[279px]">
           Handshake infographic mass market crowdfunding iteration.
         </p>
       </div>
-      <article className="heading-article grid grid-cols-3 gap-24 sm-max:gap-10">
+      <article className="heading-article grid grid-cols-3 gap-24 sm-max:gap-10 lg:gap-x-[100px] ">
         {arrayImage.map((data) => {
           return (
             <div
-              className="heading-detail flex flex-col justify-between"
+              className="heading-detail flex flex-col justify-start"
               key={data.id}
             >
-              <img src={data.image} alt="" width={200} height={300} />
-              <p className="font-openSans text-2xl font-normal leading-8">
+              <img src={data.image} alt="" />
+              <p className="font-openSans text-2xl font-normal leading-8 lg:text-[24px] lg:leading-[36px] lg:mt-[24px]">
                 {data.title}
               </p>
-              <p className="heading-detail-content font-openSans text-xl font-normal leading-7 text-grayLight">
+              <p className="heading-detail-content font-openSans text-xl font-normal leading-7 text-grayLight lg:text-[20px] lg:leading-[32px] lg:mt-[12px]">
                 Learning curve network effects return on investment.
               </p>
-              <div className=" heading-detail-explore w-40 flex justify-between items-center font-bold pb-2 mt-1">
-                <p className="font-openSans text-xl">Explore page</p>
+              <div className=" heading-detail-explore w-40 flex justify-between items-center font-bold pb-2 mt-1 lg:mt-[28px] lg:w-[164px] lg:pb-[8px]">
+                <p className="font-openSans text-xl font-bold lg:text-[20px] lg:leading-[32px] ">Explore page</p>
                 <ArrowForwardIcon />
               </div>
             </div>

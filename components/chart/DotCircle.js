@@ -22,7 +22,7 @@ const CircleStyle = styled.div`
 `;
 export default function SmallCircle() {
   return (
-    <CircleStyle className="flex gap-2">
+    <CircleStyle className="flex gap-2 lg:gap-[9.42px]">
       <span></span>
       <span></span>
       <span></span>

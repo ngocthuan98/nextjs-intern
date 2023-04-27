@@ -180,7 +180,19 @@ const HomeStyled = styled.div`
         height: 231.9px;
       }
       &-dashboard-second {
-        width: inherit;
+        width:100%;
+        &-vertical {
+          flex: 40%;
+          background-color: rgba(255, 255, 255, 0.18);
+          backdrop-filter: blur(34.3553px);
+          border-radius: 10px;
+        }
+        &-circle {
+          flex: calc(60% - 38.65px);
+          background-color: rgba(255, 255, 255, 0.18);
+          backdrop-filter: blur(34.3553px);
+          border-radius: 10px;
+        }
       }
     }
   }
@@ -212,7 +224,7 @@ export default function HomePage() {
                   <SmallCircle />
                   <HorizontalChart />
                 </div>
-                <div className="header-right-dashboard-second flex gap-6 sm-max:grid gap-y-1 lg:!h-[165.34px]">
+                <div className="header-right-dashboard-second flex gap-6 sm-max:grid gap-y-1 lg:!h-[165.34px] lg:gap-[38.65px]">
                   <div className="header-right-dashboard-second-vertical">
                     <SmallCircle />
                     <VerticalChart />

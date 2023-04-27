@@ -126,25 +126,28 @@ const HorizontalStyle = styled.div`
 `;
 export default function HorizontalChart() {
   return (
-    <HorizontalStyle className="flex  ml-10 mt-5 gap-4  h-40 m-max:gap-2 m-max:ml-5 m-max:mr-5 sm-max:gap-y-1 sm-max:mt-0">
-      <div className="Horizontal-left flex flex-col justify-between">
+    <HorizontalStyle
+      className="flex  ml-10 mt-5 gap-4  h-40 m-max:gap-2 m-max:ml-5 m-max:mr-5 
+    sm-max:gap-y-1 sm-max:mt-0 lg:!w-[434px] lg:h-[140px] lg:gap-[14.3px] lg:ml-[28.61px] lg:mt-[44.63px]"
+    >
+      <div className="Horizontal-left flex flex-col justify-between lg:!flex-[15%]">
         <span></span>
         <span></span>
         <span></span>
         <span></span>
       </div>
-      <div className="Horizontal-right flex justify-center  ">
-        <div className="Horizontal-right-span flex flex-col justify-between">
+      <div className="Horizontal-right flex justify-center  lg:!flex-[85%] ">
+        <div className="Horizontal-right-span flex flex-col justify-between lg:!flex-[80%]">
           <span></span>
           <span></span>
           <span></span>
           <span></span>
         </div>
-        <div className="Horizontal-right-text flex flex-col justify-between text-white">
-          <p>80%</p>
-          <p>30%</p>
-          <p>100%</p>
-          <p>75%</p>
+        <div className="Horizontal-right-text flex flex-col justify-between text-white text-[11.92px] lg:flex-[20%]">
+          <p className="lg:!right-[43px]">80%</p>
+          <p className="lg:!right-[186px]">30%</p>
+          <p className="lg:!left-[14px] lg:!top-[1px]">100%</p>
+          <p className="lg:!right-[57px] lg:!top-[5px]">75%</p>
         </div>
       </div>
     </HorizontalStyle>

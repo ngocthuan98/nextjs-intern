@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Link from "next/link";
 
 const FooterStyle = styled.footer`
   background-color: #fff;
@@ -132,19 +133,19 @@ const FooterStyle = styled.footer`
         margin-left: 15px;
       }
     }
-    .footer-container{
-      margin-top:60px;
+    .footer-container {
+      margin-top: 60px;
     }
   }
-  @media (max-width:715px){
-    margin: 80px 50px 0px ;
+  @media (max-width: 715px) {
+    margin: 80px 50px 0px;
     .email {
       padding: 42px 0px 0;
       &-input {
-        display:block;
+        display: block;
         width: 170px;
         height: 40px;
-        margin:0 auto;
+        margin: 0 auto;
         padding-left: 10px;
         font-size: 10px;
         &::placeholder {
@@ -155,19 +156,19 @@ const FooterStyle = styled.footer`
         margin-bottom: 10px;
       }
       &-btn {
-        display:inline-block;
+        display: inline-block;
         padding: 10px 30px;
-        margin:20px auto;
+        margin: 20px auto;
         background-color: #65e4a3;
         border: 2px solid #65e4a3;
         border-radius: 56px;
         font-family: var(--font-OpenSans);
       }
     }
-    .footer-container{
-      display:grid;
-      grid-template-columns:30% 70%;
-      height:230px;
+    .footer-container {
+      display: grid;
+      grid-template-columns: 30% 70%;
+      height: 230px;
       .logo {
         height: 30px;
         width: 80px;
@@ -185,19 +186,19 @@ const FooterStyle = styled.footer`
           height: 8.68px;
         }
       }
-      &-left{
-        width:auto;
+      &-left {
+        width: auto;
       }
       &-right {
         width: auto;
         height: aut;
-        gap:10px;
-        justify-content:space-evenly;
+        gap: 10px;
+        justify-content: space-evenly;
         font-family: var(--font-OpenSans);
         & > ul {
           width: auto;
           font-weight: 700;
-          margin-top:-15px;
+          margin-top: -15px;
           & > li:first-child {
             margin-top: 10px;
           }
@@ -239,21 +240,33 @@ export default function Footer() {
         <div className="footer-container-right flex gap-24 ">
           <ul className="flex flex-col justify-between leading-9 ">
             Landings
-            <li>Home</li>
+            <li>
+              <Link href="/">Home</Link>
+            </li>
             <li>Products</li>
-            <li>Services</li>
+            <li>
+              <Link href="/Page/Services">Services</Link>
+            </li>
           </ul>
           <ul className="flex flex-col justify-between leading-9">
             Company
-            <li>Home</li>
+            <li>
+              <Link href="/">Home</Link>
+            </li>
             <li className="careers">Careers</li>
-            <li>Services</li>
+            <li>
+              <Link href="/Page/Services">Services</Link>
+            </li>
           </ul>
           <ul className="flex flex-col justify-between leading-9">
             Resources
-            <li>Blog</li>
+            <li>
+              <Link href="/Page/Blog">Blog</Link>
+            </li>
             <li>Products</li>
-            <li>Services</li>
+            <li>
+              <Link href="/Page/Services">Services</Link>
+            </li>
           </ul>
         </div>
       </div>
