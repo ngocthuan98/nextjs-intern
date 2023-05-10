@@ -122,18 +122,18 @@ const HomeStyled = styled.div`
         line-height: 12px;
       }
       &-btn {
-        padding: 8px 19px;
+        padding: 8px 10px;
         margin-left: 1px;
         font-size: 8px;
       }
       &-btn-second {
-        padding: 8px 30px;
+        padding: 8px 20px;
         font-size: 8px;
       }
     }
     .header-right {
       display: grid;
-      grid-template-rows: 33% 65%;
+      grid-template-rows: 35% 65%;
       &-dashboard {
         height: 120px;
         background-color: rgba(255, 255, 255, 0.18);
@@ -146,7 +146,7 @@ const HomeStyled = styled.div`
       }
     }
   }
-  @media (min-width: 1400px) {
+  @media (min-width: 1280px) {
     .header .container {
       margin: 65px 100px 0;
     }
@@ -174,13 +174,13 @@ const HomeStyled = styled.div`
       }
     }
     .header-right {
-      flex:40%;
+      flex: 30%;
       &-dashboard {
         width: inherit;
         height: 231.9px;
       }
       &-dashboard-second {
-        width:100%;
+        width: 100%;
         &-vertical {
           flex: 40%;
           background-color: rgba(255, 255, 255, 0.18);
@@ -201,9 +201,9 @@ export default function HomePage() {
   return (
     <Layout>
       <HomeStyled>
-        <header className="header">
+      <header className="header">
           <div className="container flex flex-col">
-            <div className="container-top flex  gap-32 m-max:gap-16 sm-max:gap-x-2 sm-max:grid lg:justify-between lg:gap-[93px]">
+            <div className="container-top flex  gap-32 m-max:gap-16 sm-max:gap-x-2 sm-max:grid lg:justify-between lg:gap-[93px] lg:mb-[56px]">
               <div className="header-left lg:mt-[56px] lg:w-[567px] lg:h-[310px] lg:pr-20">
                 <p className="mt-12">
                   Save time by building fast with SiteB Template
@@ -225,7 +225,7 @@ export default function HomePage() {
                   <HorizontalChart />
                 </div>
                 <div className="header-right-dashboard-second flex gap-6 sm-max:grid gap-y-1 lg:!h-[165.34px] lg:gap-[38.65px]">
-                  <div className="header-right-dashboard-second-vertical">
+                  <div className="header-right-dashboard-second-vertical sm-max:float-left">
                     <SmallCircle />
                     <VerticalChart />
                   </div>

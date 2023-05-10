@@ -56,16 +56,17 @@ const Chart = styled.div`
         `}
     }
   }
-  @media (min-width: 1400px) {
+  @media (min-width: 1280px) {
     width: 93.04px;
     height: 93.04px;
     top: 24.77px;
-    left: 28.26px;
+    left: 25px;
     ${(props) =>
       props.kind === "secondChart" &&
       `
-        width: 100px;
-        height: 100px;
+        left:0;
+        width: 173.47px;
+        height: 173.47px;
       `}
     &::after {
       width: 63px;
@@ -73,8 +74,8 @@ const Chart = styled.div`
       ${(props) =>
         props.kind === "secondChart" &&
         `
-          width: 70px;
-          height: 70px;
+          width: 123px;
+          height: 123px;
           background-color: white;
         `}
     }

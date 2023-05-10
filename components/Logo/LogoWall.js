@@ -27,17 +27,23 @@ const LogoStyle = styled.div`
   }
   @media (max-width: 915px) {
     .wallLogo {
-      gap: 30px;
+      gap: 32px;
     }
     .image {
       width: 78px;
       height: 20px;
     }
   }
-  @media (min-width: 1400px) {
+  @media (max-width: 715px) {
     .wallLogo {
-      gap: 66px;
+      gap: 20px;
     }
+    .image {
+      width: 35px;
+      height: 15px;
+    }
+  }
+  @media (min-width: 1280px) {
     .image {
       width: 145px;
       height: 42px;
@@ -50,8 +56,8 @@ const LogoStyle = styled.div`
 
 export default function LogoWall() {
   return (
-    <LogoStyle className="flex">
-      <div className="wallLogo flex justify-between overflow-hidden">
+    <LogoStyle className="flex lg:!mb-[56px]">
+      <div className="wallLogo  lg:!gap-[68.5px] m-lg:!gap-[90px] flex justify-between overflow-hidden">
         <img className="image" src={`/Logo_2.png`} alt="logo" quality="100" />
         <img className="image" src={`/Logo.png`} alt="logo" quality="100" />
         <img className="image" src={`/Logo_2.png`} alt="logo" quality="100" />

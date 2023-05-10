@@ -79,7 +79,7 @@ const NavbarStyled = styled.nav`
       }
     }
       `}
-  @media (max-width: 820px) {
+  @media (max-width: 915px) {
     .container {
       display: flex;
       justify-content: between;
@@ -102,7 +102,7 @@ const NavbarStyled = styled.nav`
       height: 25px;
       padding: 5px;
       border: 1px solid;
-      border-radius: 2px;
+      border-radius: 4px;
     }
     ${(props) =>
       props.blog === "blog" &&
@@ -159,7 +159,7 @@ const NavbarStyled = styled.nav`
       transition: all 1s ease;
     }
   }
-  @media (min-width: 1400px) {
+  @media (min-width: 1280px) {
     font-size: 16px;
     .container {
       width: 90%;
@@ -245,7 +245,7 @@ export default function Navbar({ blog }) {
           </div>
           <DensityMediumIcon
             onClick={toggleNavbar}
-            className="navbar-button hidden "
+            className="navbar-button hidden  cursor-pointer"
           />
         </div>
       </div>

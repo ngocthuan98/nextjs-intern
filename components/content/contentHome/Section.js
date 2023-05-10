@@ -9,8 +9,8 @@ const SectionUp = styled.div`
   .sectionUp-left {
     position: absolute;
     height: 220px;
-    bottom: -51px;
-    left: 106px;
+    bottom: -70px;
+    left: 80px;
     box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.12);
     border-radius: 12px;
     padding: 20px 21px;
@@ -61,21 +61,24 @@ const SectionUp = styled.div`
   @media (max-width: 715px) {
     display: grid;
     grid-template-columns: 1fr;
-    padding: 20px 100px;
+    padding: 20px 67px;
     .section-image {
       & > img {
+        width:225px;
         height: 200px;
       }
     }
     .sectionUp-left {
-      left: 30px;
-      bottom: -122px;
+      left: 40px;
+      bottom: -110px;
     }
     .sectionUp-right {
       align-items: center;
     }
   }
-  @media (min-width:1400px){
+  @media (min-width:1280px){
+    font-size:16px;
+    padding:0px 0px 220px 155px;
     .sectionUp-left {
     bottom: -100px;
     left: 192px;
@@ -167,8 +170,8 @@ const SectionDown = styled.section`
       position: absolute;
       height: 235px;
       width: 180px;
-      bottom: -86px;
-      left: 28px;
+      bottom: -108px;
+      left: 18px;
       box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.12);
       border-radius: 12px;
       padding: 15px;
@@ -215,13 +218,19 @@ const SectionDown = styled.section`
   }
 `;
 
-export default function Section() {
+export default function Section({kind}) {
   return (
-    <section>
-      <SectionUp className="flex gap-32 sm-max:gap-48  lg:!pt-[0px] lg:!pr-[0px] lg:!pb-[224px] lg:!pl-[156px] lg:gap-[150px]">
+    <section className={kind == 'services' ? 'lg:mt-[120px]' : 'lg:mt-[197px]'}>
+      <SectionUp className="flex gap-32 sm-max:gap-48   lg:gap-[150px]">
         <div className="relative section-image">
-          <img src="/image/img4.png" alt="" height="300" width="290" className="lg:w-[494px] lg:h-[506px]"/>
-          <div className="sectionUp-left bg-white w-56 lg:w-[251px] lg:!h-[388px] lg:!p-[40px]">
+          <img
+            src="/image/img4.png"
+            alt=""
+            height="300"
+            width="290"
+            className="lg:w-[494px] lg:h-[506px]"
+          />
+          <div className="sectionUp-left bg-white w-56 lg:w-[251px] lg:!h-[388px] lg:!p-[40px] sm-max:w-[160px]">
             <div className="sectionUp-left-chart flex gap-3 items-end lg:gap-[11px]">
               <span></span>
               <span></span>
@@ -240,74 +249,79 @@ export default function Section() {
             </p>
           </div>
         </div>
-        <div className="sectionUp-right flex flex-col justify-end items-start gap-12">
-          <p className="text-3xl leading-10">Our Expertise</p>
+        <div className="sectionUp-right flex flex-col justify-end items-start gap-12 ">
+          <p className="text-3xl leading-10 lg:text-[36px] lg:leading-[56px] lg:mb-[70px]">
+            Our Expertise
+          </p>
           <div>
-            <p className="mb-3">
-              <span className="mr-4 sm-max:mr-2">
-                <CheckCircleIcon className="w-8 h-8" />
+            <p className="mb-3 lg:text-[20px] lg:leading-[32px]">
+              <span className="mr-4 sm-max:mr-2 lg:mr-[27px]">
+                <CheckCircleIcon className="w-8 h-8 lg:w-[36px] lg:h-[36px]" />
               </span>
-              Health Tech
+              {kind == 'services' ? 'We connect our customers with the best.' :'Health Tech' } 
             </p>
-            <p className="mb-3">
-              <span className="mr-4 sm-max:mr-2">
-                <CheckCircleIcon className="w-8 h-8" />
+            <p className="mb-3 lg:text-[20px] lg:leading-[32px]">
+              <span className="mr-4 sm-max:mr-2 lg:mr-[27px]">
+                <CheckCircleIcon className="w-8 h-8 lg:w-[36px] lg:h-[36px]" />
               </span>
-              Travel Tech
+              {kind == 'services' ? 'Advisor success customer launch party.' :'Travel Tech' } 
             </p>
-            <p>
-              <span className="mr-4 sm-max:mr-2">
-                <CheckCircleIcon className="w-8 h-8" />
+            <p className="mb-3 lg:text-[20px] lg:leading-[32px]">
+              <span className="mr-4 sm-max:mr-2 lg:mr-[27px]">
+                <CheckCircleIcon className="w-8 h-8 lg:w-[36px] lg:h-[36px]" />
               </span>
-              SAAS
+              {kind == 'services' ? 'Business-to-consumer long tail.' :'SAAS' } 
             </p>
           </div>
-          <p className="sectionUp-right-button px-12 py-4 bg-blueDark text-white sm-max:px-6">
+          <p className="sectionUp-right-button px-12 py-4 bg-blueDark text-white sm-max:px-6 lg:text-[20px] lg:leading-[28px] lg:px-[56px] lg:py-[16px]">
             Start now
           </p>
         </div>
       </SectionUp>
-      <SectionDown className="flex gap-32 justify-center sm-max:gap-0">
-        <div className="sectionDown-left flex-1 relative ">
-          <p className="text-3xl leading-10 mt-32 m-max:mt-8 sm-max:mt-16 sm-max:text-center">
+      <SectionDown className="flex gap-32 justify-center m-max:!pr-[100px] sm-max:gap-0  lg:!gap-[150px] lg:!px-[150px] lg:justify-start">
+        <div className="sectionDown-left flex-1 m-max:flex-[50%] relative lg:flex-none lg:w-[500px]">
+          <p className="text-3xl leading-10 mt-32 m-max:mt-8 sm-max:mt-16 sm-max:text-center lg:!text-[36px] lg:leading-[56px]">
             Benefits
           </p>
-          <div className="sectionDown-left-content ">
-            <p className="">
+          <div className="sectionDown-left-content lg:mt-[145px]">
+            <p className="lg:!text-[16px] lg:!leading-[28px]">
               <img
                 src="/image/icon.png"
                 alt="icon"
                 width="15"
                 height="15"
-                className="icon"
+                className="icon lg:!w-[24px] lg:!h-[24px]"
               />
-              Time & Tech saving
+              {kind == 'services' ? 'We connect our customers with the best.' :'Time & Tech saving' } 
             </p>
-            <p>
-              <span className="mr-2">
-                <VisibilityOutlinedIcon />
+            <p className="lg:!text-[16px] lg:!leading-[28px] lg:mt-[24px]">
+              <span className="mr-2 ">
+                <VisibilityOutlinedIcon className="lg:!w-[24px] lg:!h-[24px]" />
               </span>
-              Cycle product development
+              {kind == 'services' ? 'Advisor success customer launch party.' :'Cycle product development' } 
             </p>
-            <p>
+            <p className="lg:!text-[16px] lg:!leading-[28px] lg:mt-[24px]">
               <span className="mr-2">
-                <WbSunnyOutlinedIcon />
+                <WbSunnyOutlinedIcon className="lg:!w-[24px] lg:!h-[24px]" />
               </span>
               Business-to-consumer long tail.
             </p>
           </div>
         </div>
-        <div className="sectionDown-right relative flex-1">
+        <div className="sectionDown-right flex-1  m-max:flex-[50%] relative  m-max:w-[218px] lg:flex-none lg:w-[444px]">
           <img
             src="/image/img5.png"
             alt=""
             height="300"
             width="290"
-            className="relative"
+            className="relative lg:w-[444px] lg:h-[523px] m-max:!w-[260px]"
           />
-          <div className="sectionDown-right-container bg-white flex flex-col justify-between sm-max:justify-around ">
+          <div
+            className="sectionDown-right-container bg-white flex flex-col justify-between sm-max:justify-around 
+          lg:!w-[291px] lg:!h-[388px] lg:!bottom-[-160px] lg:!left-[52px] lg:justify-start lg:gap-[55px] lg:items-center"
+          >
             <Circle kind="secondChart" />
-            <div className="sectionDown-right-container-content pl-5 ">
+            <div className="sectionDown-right-container-content pl-5 lg:text-[16px] lg:leading-[32px]">
               <p className="mb-2">
                 <span className="w-2 h-2  mr-2  bg-blueLight inline-block rounded-md"></span>
                 35% - Agile Development

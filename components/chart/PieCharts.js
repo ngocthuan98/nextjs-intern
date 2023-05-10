@@ -37,7 +37,7 @@ const PieStyle = styled.div`
       }
     }
   }
-  @media (min-width:1400px){
+  @media (min-width:1280px){
     .pie-line {
       width: 76px;
       height: 52px;
@@ -59,7 +59,7 @@ export default function PieCharts() {
   return (
     <PieStyle className="flex justify-between items-center m-max:justify-center m-max:gap-10 sm-max:pb-5">
       <Circle />
-      <div className="pie-line flex justify-between items-start flex-col ">
+      <div className="pie-line flex justify-between items-start flex-col sm-max:!ml-[10px] sm-max:!mr-[10px]">
         <span></span>
         <span></span>
         <span></span>

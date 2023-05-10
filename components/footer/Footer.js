@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const FooterStyle = styled.footer`
   background-color: #fff;
-  margin: 80px 107px 0px 93px;
+  padding: 0px 107px 0px 93px;
   .email {
     background-color: #0a2640;
     height: auto;
@@ -53,7 +53,6 @@ const FooterStyle = styled.footer`
         position: absolute;
         left: 30.18px;
         top: -15px;
-        font-family: var(--font-OpenSans);
       }
       & > span {
         display: inline-block;
@@ -105,7 +104,7 @@ const FooterStyle = styled.footer`
         color: var(--color-blueDark);
         border-radius: 120px;
         background-color: var(--color-green);
-        light-height: 28px;
+        line-height: 28px;
         font-size: 9px;
       }
     }
@@ -133,12 +132,9 @@ const FooterStyle = styled.footer`
         margin-left: 15px;
       }
     }
-    .footer-container {
-      margin-top: 60px;
-    }
   }
   @media (max-width: 715px) {
-    margin: 80px 50px 0px;
+    padding: 80px 50px 0px;
     .email {
       padding: 42px 0px 0;
       &-input {
@@ -167,13 +163,14 @@ const FooterStyle = styled.footer`
     }
     .footer-container {
       display: grid;
-      grid-template-columns: 30% 70%;
-      height: 230px;
+      grid-template-columns: 25% 65%;
+      height: auto;
+      gap:10px;
       .logo {
         height: 30px;
         width: 80px;
         & > p {
-          font-size: 23.25px;
+          font-size: 16.25px;
           left: 20.18px;
           top: -4px;
         }
@@ -184,21 +181,26 @@ const FooterStyle = styled.footer`
         & > span::after {
           width: 14.91px;
           height: 8.68px;
+          top:4px;
         }
       }
       &-left {
         width: auto;
+        font-size:8px;
       }
       &-right {
+        font-size:10px;
         width: auto;
-        height: aut;
-        gap: 10px;
-        justify-content: space-evenly;
+        height:auto;
+        gap: 5px;
+        justify-content: center;
         font-family: var(--font-OpenSans);
         & > ul {
           width: auto;
           font-weight: 700;
-          margin-top: -15px;
+          height:inherit;
+          justify-content: space-between;
+          gap:24px;
           & > li:first-child {
             margin-top: 10px;
           }
@@ -207,7 +209,7 @@ const FooterStyle = styled.footer`
       .careers {
         &::after {
           left: 5px;
-          font-size: 7px;
+          font-size: 6px;
         }
       }
     }
@@ -215,32 +217,32 @@ const FooterStyle = styled.footer`
 `;
 export default function Footer() {
   return (
-    <FooterStyle>
-      <div className="email flex flex-col">
-        <p className="text-5xl text-white text-center m-max:text-3xl sm-max:text-xl">
+    <FooterStyle className="lg:!mt-[141px]">
+      <div className="email flex flex-col items-center lg:!pt-[72px] lg:!px-[242px] lg:!pb-[74px] ">
+        <p className="text-5xl text-white text-center m-max:text-3xl sm-max:text-xl lg:text-[48px] lg:leading-[72px] lg:!mb-[50px] lg:w-[716px]">
           An enterprise template to ramp up your company website
         </p>
-        <div className="text-center">
-          <input placeholder="Your email address" className="email-input " />
-          <span className="email-btn font-bold ">Start now</span>
+        <div className="text-center lg:w-full">
+          <input placeholder="Your email address" className="email-input lg:!w-[370px] lg:!h-[56px] lg:!mb-0 lg:!ml-[-14px] lg:!text-[20px] lg:!leading-[32px] placeholder:lg:!text-[20px] lg:mr-[24px]" />
+          <span className="email-btn font-bold lg:!px-[56px] lg:!py-[16px] lg:!text-[20px] lg:!leading-[28px] lg:!ml-0">Start now</span>
         </div>
       </div>
-      <div className="footer-container flex items-center justify-start  ">
-        <div className="footer-container-left mr-32 m-max:mr-12 sm-max:mr-2">
-          <div className="logo inline-block">
-            <span></span>
-            <p>SiteB</p>
+      <div className="footer-container flex items-center justify-start  m-max:!mt-28 m-max:justify-start m-max:gap-[30px] lg:!mt-[184px]  lg:gap-[179px]">
+        <div className="footer-container-left mr-32  m-max:mr-0  sm-max:mr-0 lg:!w-[300px] lg:!h-[240px] lg:mr-0">
+          <div className="logo inline-block  lg:!mb-[40px] sm-max:!mb-0">
+            <span className="lg:!w-[17.33px] after:lg:!w-[24.92px] after:lg:!h-[17.26px]"></span>
+            <p className="lg:!text-[43.25px] lg:!leading-[33.64px] lg:!top-0">SiteB</p>
           </div>
-          <p>
+          <p className="lg:font-openSans lg:text-[16px] lg:leading-[28px]">
             Social media validation business model canvas graphical user
             interface launch party creative facebook iPad twitter.
           </p>
-          <p className="mt-10">All rights reserved.</p>
+          <p className="mt-10 lg:text-[16px] lg:leading-[28px] lg:!mt-[64px]">All rights reserved.</p>
         </div>
-        <div className="footer-container-right flex gap-24 ">
-          <ul className="flex flex-col justify-between leading-9 ">
+        <div className="footer-container-right flex gap-24 m-max:gap-10 sm-max:mt-[0px] lg:!w-[642px] lg:!h-[240px] lg:text-[20px] lg:leading-[32px] lg:pt-1 lg:gap-[96px]">
+          <ul className="flex flex-col justify-between leading-9 lg:!justify-start lg:gap-14 ">
             Landings
-            <li>
+            <li className="lg:!mt-0 sm-max:!mt-[0px]">
               <Link href="/">Home</Link>
             </li>
             <li>Products</li>
@@ -248,19 +250,19 @@ export default function Footer() {
               <Link href="/Page/Services">Services</Link>
             </li>
           </ul>
-          <ul className="flex flex-col justify-between leading-9">
+          <ul className="flex flex-col justify-between leading-9 lg:!justify-start lg:gap-14">
             Company
-            <li>
+            <li className="lg:!mt-0 sm-max:!mt-0">
               <Link href="/">Home</Link>
             </li>
-            <li className="careers">Careers</li>
+            <li className="careers  after:lg:!text-[13px] after:lg:!px-[14px] after:lg:!py-[5px] ">Careers</li>
             <li>
               <Link href="/Page/Services">Services</Link>
             </li>
           </ul>
-          <ul className="flex flex-col justify-between leading-9">
+          <ul className="flex flex-col justify-between leading-9 lg:!justify-start lg:gap-14">
             Resources
-            <li>
+            <li className="lg:!mt-0 sm-max:!mt-0">
               <Link href="/Page/Blog">Blog</Link>
             </li>
             <li>Products</li>

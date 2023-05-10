@@ -14,7 +14,7 @@ export default function Services() {
           <Heading kind="services" />
         </header>
         <div>
-          <Section />
+          <Section kind = 'services' />
           <AboutValues kind="services" />
         </div>
       </ServicesStyle>

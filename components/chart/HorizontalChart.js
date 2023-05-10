@@ -66,7 +66,6 @@ const HorizontalStyle = styled.div`
       }
       &-text {
         & > p {
-          position: relative;
           &:first-child {
             bottom: 3px;
             right:40px;
@@ -102,22 +101,21 @@ const HorizontalStyle = styled.div`
         justify-content:center;
         gap:10px;
         & > p {
-          position: relative;
           &:first-child {
-            top: 11px;
+            top: 14px;
             right:20px;
           }
           &:nth-child(2) {
-            right: 90px;
-            top:3px;
+            right: 74px;
+            top:5px;
           }
           &:nth-child(3){
             bottom:4px;
             left: 5px;
           }
           &:last-child {
-            top:-12px;
-            right: 30px;
+            top:-13px;
+            right: 25px;
           }
         }
       }

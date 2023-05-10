@@ -60,7 +60,7 @@ const VerStyle = styled.div`
       }
     }
   }
-  @media (min-width: 1400px) {
+  @media (min-width: 1280px) {
     margin: 15.88px 27.91px 20.47px 24.69px;
     & > ul {
       & > li {

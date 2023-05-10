@@ -11,7 +11,6 @@ const AboutStyle = styled.div`
     justify-content: center;
     .container {
       width: 90%;
-      margin: 27px 309px 100px;
       &-header {
         & > p {
           color: #f1f1f1;
@@ -24,10 +23,9 @@ const AboutStyle = styled.div`
   }
   .headerAbout-image {
     height: auto;
-    padding: 0 100px;
     margin-top: -70px;
     display: grid;
-    grid-template-columns: 24% 35% 24%;
+    grid-template-columns: 150px 200px 152px;
     gap: 68px;
     & > img {
       width: 200px;
@@ -41,36 +39,21 @@ const AboutStyle = styled.div`
       }
     }
   }
-  @media (max-width: 915px) {
-    header {
-      .container {
-        margin: 27px 200px 100px;
-      }
-    }
-    .headerAbout-image {
-      gap: 53px;
-    }
-  }
   @media (max-width: 715px) {
-    header {
-      .container {
-        margin: 27px 80px 100px;
-      }
-    }
     .headerAbout-image {
-      padding: 0 80px;
       margin-top: -50px;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 100px 100px;
       gap: 10px;
       & > img {
-        width: 120px;
-        height: 110px;
+        height: 100px;
         border-radius: 12px;
-        &:nth-child(2) {
-          height: 230px;
-          width: 200px;
-        }
       }
+    }
+  }
+  @media (min-width:1280px) {
+    .headerAbout-image {
+      grid-template-columns: 300px 400px 302px;
+      gap: 10px;
     }
   }
 `;
@@ -80,13 +63,13 @@ export default function About() {
     <Layout>
       <AboutStyle>
         <header className="bg-blueDark">
-          <div className="container">
+          <div className="container pt-[27px] px-[235px] pb-[100px] m-max:px-[140px] m-max:pb-[100px] sm-max:px-[50px] sm-max:pb-[70px] lg:!px-[211px] lg:!pt-[57.5px] lg:!pb-[70px]">
             <div className="container-header text-center text-lightWhite">
-              <p className="text-xl leading-8 font-openSans">About</p>
-              <p className="text-5xl text-white">
+              <p className="text-xl leading-8 font-openSans lg:text-[20px] lg:leading-[32px] lg:mb-[12px]">About</p>
+              <p className="text-5xl text-white lg:text-[64px] lg:!leading-[84px] lg:mb-[17.5px]">
                 We love to make great things, things that matter.
               </p>
-              <p className="text-xs leading-7 font-openSans m-max:px-4">
+              <p className="text-xs leading-7 font-openSans m-max:px-4 lg:mb-[70px] lg:text-[16px] lg:leading-[28px]">
                 Funding handshake buyer business-to-business metrics iPad
                 partnership. First mover advantage innovator success deployment
                 non-disclosure.
@@ -94,12 +77,12 @@ export default function About() {
             </div>
           </div>
         </header>
-        <div className="headerAbout-image">
-          <img src="/image/img4.png" alt="" />
-          <img src="/image/img5.png" alt="" />
-          <img src="/image/img1.png" alt="" />
-          <img src="/image/img12.png" alt="" />
-          <img src="/image/img13.png" alt="" />
+        <div className="headerAbout-image px-[100px] lg:!px-[150px] sm-max:pr-[67px] sm-max:pl-[80px] sm-max:!gap-x-[15px] m-max:!gap-x-[25px] m-max:!gap-y-[10px] lg:!gap-x-[50px] lg:!gap-y-[40px]">
+          <img src="/image/img4.png" alt="" className="lg:!w-[300px] lg:!h-[285px]"/>
+          <img src="/image/img5.png" alt="" className="sm-max:!h-[210px] m-max:!h-[410px] lg:!w-[400px] lg:!h-[632px] "/>
+          <img src="/image/img1.png" alt="" className="lg:!w-[302px] lg:!h-[305px] "/>
+          <img src="/image/img12.png" alt="" className="lg:!w-[300px] lg:!h-[303px] lg:mt-[-16px]"/>
+          <img src="/image/img13.png" alt="" className="lg:!w-[302px] lg:!h-[287px] "/>
         </div>
         <section>
           <AboutIntro />
