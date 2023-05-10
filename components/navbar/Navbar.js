@@ -55,6 +55,9 @@ const NavbarStyled = styled.nav`
       font-weight: 700;
     }
   }
+  .navbar-button{
+    display:none;
+  }
   ${(props) =>
     props.blog === "blog" &&
     `
@@ -245,7 +248,7 @@ export default function Navbar({ blog }) {
           </div>
           <DensityMediumIcon
             onClick={toggleNavbar}
-            className="navbar-button hidden  cursor-pointer"
+            className="navbar-button   cursor-pointer"
           />
         </div>
       </div>
