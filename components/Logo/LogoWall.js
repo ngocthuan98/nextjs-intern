@@ -5,6 +5,7 @@ const LogoStyle = styled.div`
   height: auto;
   margin: 42px 0;
   position: relative;
+  overflow: hidden;
 
   .image {
     width: 98px;
@@ -12,11 +13,26 @@ const LogoStyle = styled.div`
   }
   .wallLogo {
     gap: 46px;
+    animation: move 5s linear infinite;
+  }
+  @keyframes move {
+    0% {
+      transform: translateX(0px);
+    }
+    50% {
+      transform: translateX(50px);
+    }
+    100% {
+       {
+        transform: translateX(0px);
+      }
+    }
   }
   .bg-img {
     position: absolute;
-    width: 100%;
+    width: 102%;
     height: 40px;
+    right:-2px;
     background-image: linear-gradient(
       90deg,
       #0a2640 0%,

@@ -99,11 +99,11 @@ export default function Details() {
         <p className="text-4xl lg:text-[48px] lg:!leading-[72px] lg:!pr-[520px]">
           An enterprise template to ramp up your company website
         </p>
-        <span className="lg:mt-[-40px]">
-          <ArrowForwardIcon className="lg:w-[36px] lg:h-[36px]" />
+        <span className="lg:!mt-[-40px]">
+          <ArrowForwardIcon className="lg:!w-[36px] lg:!h-[36px]" />
         </span >
-        <span className="lg:mt-[-40px]">
-          <ArrowBackIcon className="lg:w-[36px] lg:h-[36px]"/>
+        <span className="lg:!mt-[-40px]">
+          <ArrowBackIcon className="lg:!w-[36px] lg:!h-[36px]"/>
         </span>
       </div>
       <article className="container-detail-content mt-24 grid grid-cols-3 gap-x-10 m-max:grid-cols-2 sm-max:grid-cols-1 gap-y-5  lg:!gap-x-[22px]">
