@@ -55,9 +55,6 @@ const NavbarStyled = styled.nav`
       font-weight: 700;
     }
   }
-  .navbar-button{
-    display:none;
-  }
   ${(props) =>
     props.blog === "blog" &&
     `
@@ -84,11 +81,6 @@ const NavbarStyled = styled.nav`
       `}
   @media (max-width: 915px) {
     .container {
-      display: flex;
-      justify-content: between;
-      height: auto;
-      align-items: start;
-      position: relative;
       overflow: hidden;
     }
     .menu {
@@ -96,7 +88,11 @@ const NavbarStyled = styled.nav`
     }
     .menu-second {
       display: block;
+      width: 100%;
+      height: auto;
+      transition: all 5s ease-out;
     }
+
     .navbar-button {
       display: block;
       color: white;
@@ -109,57 +105,15 @@ const NavbarStyled = styled.nav`
     }
     ${(props) =>
       props.blog === "blog" &&
-      ` .menu-second {
-        color:
-      }
+      `
       .navbar-button {
         color: black;
       }
       `}
-    .navbar-second {
-      position: absolute;
-      width: 150px;
-      height: 150px;
-      background-color: var(--color-blueDark);
-      z-index: 1;
-      top: 65px;
-      right: -132px;
-      transition: all 1s ease;
-    }
-    .open {
-      position: fixed;
-      width: 150px;
-      height: 150px;
-      background-color: var(--color-blueDark);
-      z-index: 1;
-      top: 65px;
-      right: 132px;
-      transition: all 1s ease;
-    }
   }
   @media (max-width: 715px) {
     .container {
       margin: 27px 50px 0;
-    }
-    .navbar-second {
-      position: absolute;
-      width: 150px;
-      height: 150px;
-      background-color: var(--color-blueDark);
-      z-index: 1;
-      top: 65px;
-      right: -80px;
-      transition: all 1s ease;
-    }
-    .open {
-      position: fixed;
-      width: 150px;
-      height: 150px;
-      background-color: var(--color-blueDark);
-      z-index: 1;
-      top: 65px;
-      right: 80px;
-      transition: all 1s ease;
     }
   }
   @media (min-width: 1280px) {
@@ -209,47 +163,63 @@ export default function Navbar({ blog }) {
   return (
     <NavbarStyled blog={blog}>
       <div className="container">
-        <div className="container-navbar flex justify-between items-center">
-          <Link href="/">
-            <div className="logo inline-block text-white ">
-              <span></span>
-              <p>SiteB</p>
-            </div>
-          </Link>
-          <ul className="menu flex items-center gap-10">
-            <li className="menu-item text-white">
-              <Link href="/Page/Blog ">Blog</Link>
-            </li>
-            <li className="menu-item text-white">
-              <Link href="/Page/Services">Services</Link>
-            </li>
-            <li className="menu-item text-white">
-              <Link href="/Page/About">About</Link>
-            </li>
-            <li className="menu-item-contact px-10 py-2 bg-white">Contact</li>
-          </ul>
-          <div className="menu-second hidden">
-            <ul
-              className={`${
-                openLinks ? "open" : "navbar-second"
-              }  flex flex-col items-center justify-evenly`}
-            >
-              <li className="menu-item ">
-                <Link className="!text-white" href="/Page/Blog">Blog</Link>
+        <div className=" flex flex-col ">
+          <div className="container-navbar flex justify-between items-center">
+            <Link href="/">
+              <div className="logo inline-block text-white ">
+                <span></span>
+                <p>SiteB</p>
+              </div>
+            </Link>
+            <ul className="menu flex items-center gap-10">
+              <li className="menu-item text-white">
+                <Link href="/Page/Blog ">Blog</Link>
               </li>
-              <li className="menu-item ">
-                <Link className="!text-white" href="/Page/Services">Services</Link>
+              <li className="menu-item text-white">
+                <Link href="/Page/Services">Services</Link>
               </li>
-              <li className="menu-item ">
-                <Link className="!text-white" href="/Page/About">About</Link>
+              <li className="menu-item text-white">
+                <Link href="/Page/About">About</Link>
               </li>
-              <li className="menu-item-contact px-4 py-1 bg-white ">Contact</li>
+              <li className="menu-item-contact px-10 py-2 bg-white">Contact</li>
             </ul>
+            <DensityMediumIcon
+              onClick={toggleNavbar}
+              className="navbar-button hidden  cursor-pointer"
+            />
+            {/* <Link href="/Page/Login" className="px-3 py-3 border-solid border-[2px] text-white">
+                Login
+            </Link> */}
           </div>
-          <DensityMediumIcon
-            onClick={toggleNavbar}
-            className="navbar-button   cursor-pointer"
-          />
+        </div>
+        <div className={`${openLinks ? "" : "!hidden"} menu-second relative`}>
+          <ul className="flex flex-col items-center justify-center gap-2">
+            <li className="">
+              <Link
+                className={blog == "blog" ? "text-blueDark font-semibold" : "text-white"}
+                href="/Page/Blog"
+              >
+                Blog
+              </Link>
+            </li>
+            <li className="">
+              <Link
+                className={blog == "blog" ? "text-blueDark font-semibold" : "text-white"}
+                href="/Page/Services"
+              >
+                Services
+              </Link>
+            </li>
+            <li className="">
+              <Link
+                className={blog == "blog" ? "text-blueDark font-semibold" : "text-white"}
+                href="/Page/About"
+              >
+                About
+              </Link>
+            </li>
+            <li className="menu-item-contact px-8 py-1 bg-white ">Contact</li>
+          </ul>
         </div>
       </div>
     </NavbarStyled>

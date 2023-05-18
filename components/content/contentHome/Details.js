@@ -18,15 +18,15 @@ const DetailStyle = styled.div`
       height: auto;
       &-author {
         border-radius: 12px;
-        height:auto;
+        height: auto;
         padding: 25px 49px;
       }
     }
   }
- 
+
   .slick-track {
     display: flex;
-    gap:2px;
+    gap: 2px;
   }
   .slick-arrow {
     position: absolute;
@@ -65,8 +65,8 @@ const DetailStyle = styled.div`
         right: 60px;
       }
     }
-    .slick-track{
-      gap:20px;
+    .slick-track {
+      gap: 20px;
     }
   }
   @media (max-width: 715px) {
@@ -93,8 +93,8 @@ const DetailStyle = styled.div`
         right: 25px;
       }
     }
-    .slick-track{
-      gap:5px;
+    .slick-track {
+      gap: 5px;
     }
   }
   @media (min-width: 1280px) {
@@ -137,6 +137,22 @@ export default function Details() {
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
+    responsive: [
+      {
+        breakpoint: 915,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 715,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
@@ -145,12 +161,6 @@ export default function Details() {
         <p className="text-4xl lg:text-[48px] lg:!leading-[72px] lg:!pr-[520px]">
           An enterprise template to ramp up your company website
         </p>
-        {/* <span className="lg:!mt-[-40px]">
-          <ArrowForwardIcon className="lg:!w-[36px] lg:!h-[36px]" />
-        </span>
-        <span className="lg:!mt-[-40px]">
-          <ArrowBackIcon className="lg:!w-[36px] lg:!h-[36px]" />
-        </span> */}
       </div>
       <Slider {...settings} className="overflow-hidden mt-24">
         {arrayDetail.map((detail) => {
