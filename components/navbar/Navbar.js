@@ -185,7 +185,7 @@ export default function Navbar({ blog }) {
             </ul>
             <DensityMediumIcon
               onClick={toggleNavbar}
-              className="navbar-button hidden  cursor-pointer"
+              className="navbar-button !hidden  cursor-pointer"
             />
             {/* <Link href="/Page/Login" className="px-3 py-3 border-solid border-[2px] text-white">
                 Login
