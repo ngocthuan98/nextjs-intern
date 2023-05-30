@@ -217,7 +217,7 @@ const FooterStyle = styled.footer`
 `;
 export default function Footer() {
   return (
-    <FooterStyle className="lg:!mt-[141px]">
+    <FooterStyle className="mt-[60px] lg:mt-[141px] sm-max:mt-[0]">
       <div className="email flex flex-col items-center lg:!pt-[72px] lg:!px-[242px] lg:!pb-[74px] ">
         <p className="text-5xl text-white text-center m-max:text-3xl sm-max:text-xl lg:text-[48px] lg:leading-[72px] lg:!mb-[50px] lg:w-[716px]">
           An enterprise template to ramp up your company website

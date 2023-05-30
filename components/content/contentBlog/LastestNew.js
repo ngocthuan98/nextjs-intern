@@ -10,7 +10,7 @@ export default function LastestNew({ blog }) {
         </span>
       </p>
       <p className="font-openSans mb-1 sm-max:mb-2 lg:text-[20px] lg:leading-[32px] lg:mb-[12px]">
-        {blog.body}
+        {blog?.body}
       </p>
       <div className="blog-detail-avatar flex items-center gap-5">
         <img src={blog?.avatar} alt="" />

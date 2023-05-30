@@ -94,7 +94,7 @@ const NavbarStyled = styled.nav`
     }
 
     .navbar-button {
-      display: block;
+      display: block !important;
       color: white;
       width: 30px;
       margin-top: 10px;
@@ -181,15 +181,12 @@ export default function Navbar({ blog }) {
               <li className="menu-item text-white">
                 <Link href="/Page/About">About</Link>
               </li>
-              <li className="menu-item-contact px-10 py-2 bg-white">Contact</li>
+              <Link className="menu-item-contact px-10 py-2 bg-white cursor-pointer " href="/">Contact</Link>
             </ul>
             <DensityMediumIcon
               onClick={toggleNavbar}
               className="navbar-button !hidden  cursor-pointer"
             />
-            {/* <Link href="/Page/Login" className="px-3 py-3 border-solid border-[2px] text-white">
-                Login
-            </Link> */}
           </div>
         </div>
         <div className={`${openLinks ? "" : "!hidden"} menu-second relative`}>
@@ -218,7 +215,7 @@ export default function Navbar({ blog }) {
                 About
               </Link>
             </li>
-            <li className="menu-item-contact px-8 py-1 bg-white ">Contact</li>
+            <Link className="menu-item-contact px-10 py-2 bg-white cursor-pointer " href="/">Contact</Link>
           </ul>
         </div>
       </div>

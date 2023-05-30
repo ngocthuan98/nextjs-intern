@@ -80,7 +80,7 @@ export default function Blog() {
                 disappear == false ? "hidden" : ""
               }`}
             >
-              <span className="px-16 py-4 rounded-full border-solid border-2 border-blueDark text-blueDark text-xl font-bold leading-7 font-openSans lg:px-[56px] lg:py-[16px] lg:text-[20px] lg:leading-[28px] ">
+              <span className="px-16 py-4 rounded-full border-solid border-2 border-blueDark text-blueDark text-xl font-bold leading-7 font-openSans lg:px-[56px] lg:py-[16px] lg:text-[20px] lg:leading-[28px] cursor-pointer">
                 Load more
               </span>
             </div>
