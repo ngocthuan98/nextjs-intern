@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import arrayDetail from "../../data/DataDetails";
 import Slider from "react-slick";
+import { useEffect, useState } from "react";
+import { collectionApi } from "../../api/collectionApi"; 
 
 const DetailStyle = styled.div`
   padding: 60px 80px 60px 130px;
@@ -154,6 +155,15 @@ export default function Details() {
       },
     ],
   };
+  const [collectDetail, setCollectDetail] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await collectionApi();
+      setCollectDetail(data);
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <DetailStyle className="relative mt-[189px] lg:!mt-[289px] lg:!py-[96px] lg:!pr-[100px] lg:!pl-[150px] ">
@@ -163,27 +173,27 @@ export default function Details() {
         </p>
       </div>
       <Slider {...settings} className="overflow-hidden mt-24">
-        {arrayDetail.map((detail) => {
+        {collectDetail.map((detail) => {
           return (
             <div
               className="container-detail-content-author bg-white text-black font-openSans lg:!w-[350px]"
-              key={detail.id}
+              key={detail?._id}
             >
               <p className="text-xl leading-8 lg:!text-[24px] lg:!leading-[36px]">
-                {detail.title}
+                {detail?.body}
               </p>
               <div className="flex gap-3 mt-8 lg:!gap-[16px] lg:!mt-[40px]">
                 <img
-                  src={detail.avatar}
+                  src={detail?.icon}
                   alt="avatar"
                   width={40}
                   height={40}
                   className="lg:!w-[58px] lg:!h-[58px]"
                 />
                 <p className="text-sm text-blueDark font-openSans font-bold lg:!text-[16px] lg:!leading-[32px]">
-                  {detail.name}
+                  {detail?.name}
                   <span className="text-xs block text-blueDark lg:!text-[14px] lg:!leading-[32px] font-normal">
-                    {detail.mail}
+                    {detail?.position}
                   </span>
                 </p>
               </div>

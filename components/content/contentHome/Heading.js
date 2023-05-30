@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import arrayImage from "../../data/DataHeading";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { pageApi } from "../../api/pageAPI";
+import { useEffect, useState } from "react";
 const HeadingStyle = styled.div`
   ${(props) =>
     props.kind === "services" &&
@@ -45,6 +46,7 @@ const HeadingStyle = styled.div`
         `}
   }
 
+
   @media (max-width: 715px) {
     .heading-article {
       display: flex;
@@ -72,7 +74,17 @@ const HeadingStyle = styled.div`
   }
 `;
 
-export default function Heading({ kind }) {
+export default function Heading({ kind, pages }) {
+  const [heading, setHeading] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await pageApi();
+      setHeading(data);
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <HeadingStyle kind={kind}>
       <div className="heading-content text-center">
@@ -84,26 +96,33 @@ export default function Heading({ kind }) {
         </p>
       </div>
       <article className="heading-article px-[135px] my-[32px] sm-max:px-[67px] grid grid-cols-3 m-max:grid-cols-2 gap-24  lg:gap-x-[100px] lg:px-[150px] ">
-        {arrayImage.map((data) => {
-          return (
-            <div
-              className="heading-detail flex flex-col justify-start gap-[24px] lg:!w-[300px] lg:!h-[563px] "
-              key={data.id}
-            >
-              <img src={data.image} alt="" />
-              <p className="font-openSans text-2xl font-normal leading-8 lg:text-[24px] lg:leading-[36px] lg:mt-[24px]">
-                {data.title}
-              </p>
-              <p className="heading-detail-content font-openSans text-xl font-normal leading-7 text-grayLight lg:text-[20px] lg:leading-[32px] lg:mt-[12px]">
-                Learning curve network effects return on investment.
-              </p>
-              <div className=" heading-detail-explore w-40 flex justify-between items-center font-bold pb-2 mt-1 lg:mt-[28px] lg:w-[162px] lg:pb-[8px]">
-                <p className="font-openSans text-xl font-bold lg:text-[20px] lg:leading-[32px] ">Explore page</p>
-                <ArrowForwardIcon className="lg:!w-[24px] lg:!h-[26px]"/>
+        {heading
+          .slice()
+          .reverse()
+          .map((data) => {
+            return (
+              <div
+                className={`heading-detail flex flex-col justify-start gap-[24px] ${
+                  kind === "services" ? "lg:!h-[390px]" : "lg:!h-auto"
+                } lg:!w-[100%]  `}
+                key={data?._id}
+              >
+                <img src={data.image} alt="" className="rounded-[24px]" />
+                <p className="font-openSans text-2xl font-normal leading-8 lg:text-[24px] lg:leading-[36px] lg:mt-[24px]">
+                  {data?.title}
+                </p>
+                <p className="heading-detail-content font-openSans text-xl font-normal leading-7 text-grayLight lg:text-[20px] lg:leading-[32px] lg:mt-[12px]">
+                  {data?.body}
+                </p>
+                <div className=" heading-detail-explore w-40 flex justify-between items-center font-bold pb-2 mt-1 lg:mt-[28px] lg:w-[162px] lg:pb-[8px]">
+                  <p className="font-openSans text-xl font-bold lg:text-[20px] lg:leading-[32px] ">
+                    Explore page
+                  </p>
+                  <ArrowForwardIcon className="lg:!w-[24px] lg:!h-[26px]" />
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
       </article>
     </HeadingStyle>
   );
