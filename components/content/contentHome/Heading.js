@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { pageApi } from "../../api/pageApi";
+import { pageApi } from "../../api/pageAPI";
 import { useEffect, useState } from "react";
 const HeadingStyle = styled.div`
   ${(props) =>
