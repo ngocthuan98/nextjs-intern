@@ -2,6 +2,7 @@ import LastestNew from "../../components/content/contentBlog/LastestNew";
 import Layout from "../../components/layout/Layout";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import RefreshIcon from '@mui/icons-material/Refresh';
 
 export default function Blog() {
   const [blogs, setBlogs] = useState([]);
@@ -12,7 +13,6 @@ export default function Blog() {
       "https://web-page-b0sx.onrender.com/blogs/getBlogs"
     );
     setBlogs(res?.data?.data);
-    return res.data;
   };
   useEffect(() => {
     fetchData();
@@ -40,10 +40,10 @@ export default function Blog() {
             </p>
           </div>
           <div className="blog-content grid grid-cols-2 gap-x-24 py-16 border-solid border-b border-blueDark sm-max:gap-x-10 sm-max:py-10 lg:py-[72px] lg:gap-x-[100px]">
-            <img src={blogs[0]?.image} alt="" />
+            {blogs?<img src={blogs[0]?.image} alt="link image change" className="lg:h-[400px]"/> : <RefreshIcon className="w-[50px] h-[50px] animate-spin"></RefreshIcon>}
             <div className="flex justify-center flex-col gap-4 sm-max:gap-2">
               <p className="font-openSans text-lg leading-7 font-bold text-blueDark sm-max:text-sm lg:text-[16px] lg:leading-[28px]">
-                {blogs[0]?.categoryName}
+                {blogs?blogs[0]?.categoryName : <RefreshIcon className="w-[50px] h-[50px] animate-spin"></RefreshIcon>}
                 <span className="pl-[12px] text-grayLight font-normal">
                   November 22, 2021
                 </span>
@@ -53,12 +53,12 @@ export default function Blog() {
               </p>
               <div className="flex items-center gap-5 lg:gap-[12px]">
                 <img
-                  src={blogs[0]?.avatar}
-                  alt=""
+                  src={blogs?blogs[0]?.avatar:<RefreshIcon className="w-[50px] h-[50px] animate-spin"></RefreshIcon>}
+                  alt="link image change"
                   className="lg:w-[32px] lg:h-[32px]"
                 />
                 <p className="sm-max:text-xs lg:text-[16px] lg:leading-[28px]">
-                  {blogs[0]?.author}
+                  {blogs?blogs[0]?.author:<RefreshIcon className="w-[50px] h-[50px] animate-spin"></RefreshIcon>}
                 </p>
               </div>
             </div>
@@ -70,9 +70,9 @@ export default function Blog() {
               Latest news
             </p>
             <article className="blog grid  grid-cols-3  gap-24  m-max:grid-cols-2 m-max:gap-10 sm-max:grid-cols-1 sm-max:gap-y-10 lg:gap-x-[50px] lg:gap-y-[80px] ">
-              {blogs.slice(1, loadMore).map((blog) => {
+              {blogs?blogs.slice(1, loadMore).map((blog) => {
                 return <LastestNew key={blog?._id} blog={blog} />;
-              })}
+              }) : <RefreshIcon className="w-[50px] h-[50px] animate-spin"></RefreshIcon>}
             </article>
             <div
               onClick={handLoadMore}
@@ -80,7 +80,7 @@ export default function Blog() {
                 disappear == false ? "hidden" : ""
               }`}
             >
-              <span className="px-16 py-4 rounded-full border-solid border-2 border-blueDark text-blueDark text-xl font-bold leading-7 font-openSans lg:px-[56px] lg:py-[16px] lg:text-[20px] lg:leading-[28px] cursor-pointer">
+              <span className="px-16 py-4 rounded-full border-solid border-2 border-blueDark text-blueDark text-xl font-bold leading-7 font-openSans lg:px-[56px] lg:py-[16px] lg:text-[20px] lg:leading-[28px] ">
                 Load more
               </span>
             </div>
