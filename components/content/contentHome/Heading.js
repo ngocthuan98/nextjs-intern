@@ -62,7 +62,7 @@ const HeadingStyle = styled.div`
       props.kind === "services" &&
       `
       .heading-article {
-        padding: 70px 150px 99px 153px;
+        padding: 35px 150px 99px 153px;
       }
       .heading-detail{
         &-explore{
@@ -85,6 +85,7 @@ export default function Heading({ kind, pages }) {
     fetchData();
   }, []);
 
+
   return (
     <HeadingStyle kind={kind}>
       <div className="heading-content text-center">
@@ -95,15 +96,12 @@ export default function Heading({ kind, pages }) {
           Handshake infographic mass market crowdfunding iteration.
         </p>
       </div>
-      <article className="heading-article px-[135px] my-[32px] sm-max:px-[67px] grid grid-cols-3 m-max:grid-cols-2 gap-24  lg:gap-x-[100px] lg:px-[150px] ">
-        {heading
-          .slice()
-          .reverse()
-          .map((data) => {
+      <article className="heading-article px-[135px]  sm-max:px-[67px] grid grid-cols-3 m-max:grid-cols-2 gap-24  lg:gap-x-[100px] lg:px-[150px] ">
+        {heading.slice().reverse().map((data) => {
             return (
               <div
-                className={`heading-detail flex flex-col justify-start gap-[24px] ${
-                  kind === "services" ? "lg:!h-[390px]" : "lg:!h-auto"
+                className={`heading-detail flex flex-col justify-start ${
+                  kind === "services" ? "lg:!h-[490px]" : "lg:!h-auto"
                 } lg:!w-[100%]  `}
                 key={data?._id}
               >

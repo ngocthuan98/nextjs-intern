@@ -52,11 +52,11 @@ export default function Blog() {
                 Pitch termsheet backing validation focus release.
               </p>
               <div className="flex items-center gap-5 lg:gap-[12px]">
-                <img
-                  src={blogs?blogs[0]?.avatar:<RefreshIcon className="w-[50px] h-[50px] animate-spin"></RefreshIcon>}
+                {blogs?<img
+                  src={blogs[0]?.avatar}
                   alt="link image change"
                   className="lg:w-[32px] lg:h-[32px]"
-                />
+                />:<RefreshIcon className="w-[50px] h-[50px] animate-spin"></RefreshIcon>}
                 <p className="sm-max:text-xs lg:text-[16px] lg:leading-[28px]">
                   {blogs?blogs[0]?.author:<RefreshIcon className="w-[50px] h-[50px] animate-spin"></RefreshIcon>}
                 </p>

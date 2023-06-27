@@ -4,4 +4,5 @@ export const collectionApi = async () => {
   const res = await axios.get(
     "https://web-page-b0sx.onrender.com/collections/getCollections"
   );
+  return res?.data?.data
 };
