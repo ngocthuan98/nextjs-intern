@@ -2,6 +2,8 @@ import styled from "styled-components";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import  {pageApi}  from "../../api/pageApi";
 import { useEffect, useState } from "react";
+import RefreshIcon from '@mui/icons-material/Refresh';
+
 const HeadingStyle = styled.div`
   ${(props) =>
     props.kind === "services" &&
@@ -76,10 +78,13 @@ const HeadingStyle = styled.div`
 
 export default function Heading({ kind, pages }) {
   const [heading, setHeading] = useState([]);
+  const [loading,setLoading] = useState(false);
   useEffect(() => {
     const fetchData = async () => {
       const data = await pageApi();
+      setLoading(true)
       setHeading(data);
+      setLoading(false);
     };
 
     fetchData();
@@ -97,7 +102,7 @@ export default function Heading({ kind, pages }) {
         </p>
       </div>
       <article className="heading-article px-[135px]  sm-max:px-[67px] grid grid-cols-3 m-max:grid-cols-2 gap-24  lg:gap-x-[100px] lg:px-[150px] ">
-        {heading.slice().reverse().map((data) => {
+        {!loading?heading.slice().reverse().map((data) => {
             return (
               <div
                 className={`heading-detail flex flex-col justify-start ${
@@ -120,7 +125,7 @@ export default function Heading({ kind, pages }) {
                 </div>
               </div>
             );
-          })}
+          }):<RefreshIcon className="w-[50px] h-[50px] animate-spin"></RefreshIcon>}
       </article>
     </HeadingStyle>
   );

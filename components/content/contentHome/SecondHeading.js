@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import arrayArticle from "../../data/DataSecondHeading";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import {blogApi} from '../../api/blogApi'
+import RefreshIcon from '@mui/icons-material/Refresh';
 
 const SecondHeadingStyle = styled.div`
   @media (max-width: 715px) {
@@ -24,13 +24,16 @@ export default function SecondHeading() {
   const [secondHeading, setSecondHeading] = useState([]);
   const [loadMore, setLoadMore] = useState(4);
   const [disappear, setDisappear] = useState(true);
-  const fetchData = async () => {
-    const res = await axios.get(
-      "https://web-page-b0sx.onrender.com/blogs/getBlogs"
-    );
-    setSecondHeading(res?.data?.data);
-  };
+  const [loading,setLoading] = useState(false);
+
   useEffect(() => {
+    const fetchData = async () => {
+      const data = await blogApi();
+      setLoading(true)
+      setSecondHeading(data);
+      setLoading(false);
+    };
+
     fetchData();
   }, []);
 
@@ -50,7 +53,7 @@ export default function SecondHeading() {
         </p>
       </div>
       <article className="article px-[201px] py-[32px] grid  grid-cols-3  gap-24 sm-max:px-[50px]  m-max:grid-cols-2 m-max:gap-10 lg:gap-x-[50px]  ">
-        {secondHeading.slice(1, loadMore).map((data) => {
+        {!loading?secondHeading.slice(1, loadMore).map((data) => {
           return (
             <div className="flex flex-col lg:w-[300px]" key={data?._id}>
               <img src={data?.image} alt="" />
@@ -65,7 +68,7 @@ export default function SecondHeading() {
               </p>
             </div>
           );
-        })}
+        }):<RefreshIcon className="w-[50px] h-[50px] animate-spin"></RefreshIcon>}
       </article>
       <div
         onClick={handLoadMore}

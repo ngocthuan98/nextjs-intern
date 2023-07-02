@@ -4,6 +4,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Slider from "react-slick";
 import { useEffect, useState } from "react";
 import { collectionApi } from "../../api/collectionApi"; 
+import RefreshIcon from '@mui/icons-material/Refresh';
 
 const DetailStyle = styled.div`
   padding: 60px 80px 60px 130px;
@@ -156,10 +157,13 @@ export default function Details() {
     ],
   };
   const [collectDetail, setCollectDetail] = useState([]);
+  const [loading,setLoading] = useState(false);
   useEffect(() => {
     const fetchData = async () => {
       const data = await collectionApi();
+      setLoading(true);
       setCollectDetail(data);
+      setLoading(false);
     };
 
     fetchData();
@@ -173,7 +177,7 @@ export default function Details() {
         </p>
       </div>
       <Slider {...settings} className="overflow-hidden mt-24">
-        {collectDetail.map((detail) => {
+        {!loading?collectDetail.map((detail) => {
           return (
             <div
               className="container-detail-content-author bg-white text-black font-openSans lg:!w-[350px]"
@@ -199,7 +203,7 @@ export default function Details() {
               </div>
             </div>
           );
-        })}
+        }):<RefreshIcon className="w-[50px] h-[50px] animate-spin"></RefreshIcon>}
       </Slider>
     </DetailStyle>
   );
