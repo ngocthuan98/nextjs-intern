@@ -157,11 +157,10 @@ export default function Details() {
     ],
   };
   const [collectDetail, setCollectDetail] = useState([]);
-  const [loading,setLoading] = useState(false);
+  const [loading,setLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
       const data = await collectionApi();
-      setLoading(true);
       setCollectDetail(data);
       setLoading(false);
     };
@@ -177,7 +176,7 @@ export default function Details() {
         </p>
       </div>
       <Slider {...settings} className="overflow-hidden mt-24">
-        {!loading?collectDetail.map((detail) => {
+        {loading?<RefreshIcon className="w-[50px] h-[50px] animate-spin"></RefreshIcon>:collectDetail.map((detail) => {
           return (
             <div
               className="container-detail-content-author bg-white text-black font-openSans lg:!w-[350px]"
@@ -203,7 +202,7 @@ export default function Details() {
               </div>
             </div>
           );
-        }):<RefreshIcon className="w-[50px] h-[50px] animate-spin"></RefreshIcon>}
+        })}
       </Slider>
     </DetailStyle>
   );

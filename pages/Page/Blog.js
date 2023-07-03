@@ -8,25 +8,25 @@ export default function Blog() {
   const [blogs, setBlogs] = useState([]);
   const [loadMore, setLoadMore] = useState(7);
   const [disappear, setDisappear] = useState(true);
-  const [loading,setLoading] = useState(false)
+  const [loading,setLoading] = useState(true)
 
   useEffect(() => {
     const fetchData = async () => {
       const data = await blogApi();
-      setLoading(true)
       setBlogs(data);
-      setLoading(false);
+      setLoading(false);    
     };
 
     fetchData();
+    
   }, []);
+  
+  console.log(loading)
 
   const handLoadMore = () => {
     setLoadMore((prev) => prev + 3);
     setDisappear(loadMore >= blogs.length);
   };
-
-
   return (
     <Layout secondNavbar={true}>
       <div
@@ -43,10 +43,10 @@ export default function Blog() {
             </p>
           </div>
           <div className="blog-content grid grid-cols-2 gap-x-24 py-16 border-solid border-b border-blueDark sm-max:gap-x-10 sm-max:py-10 lg:py-[72px] lg:gap-x-[100px]">
-            {!loading?<img src={blogs[0]?.image} alt="link image change wait to load image" className="lg:h-[400px]"/> : <RefreshIcon className="w-[50px] h-[50px] animate-spin"></RefreshIcon>}
+            {loading?<RefreshIcon className="w-[50px] h-[50px] animate-spin"></RefreshIcon>:<img src={blogs[0]?.image} alt="link image change wait to load image" className="lg:h-[400px]"/> }
             <div className="flex justify-center flex-col gap-4 sm-max:gap-2">
               <p className="font-openSans text-lg leading-7 font-bold text-blueDark sm-max:text-sm lg:text-[16px] lg:leading-[28px]">
-                {!loading?blogs[0]?.categoryName : <RefreshIcon className="w-[50px] h-[50px] animate-spin"></RefreshIcon>}
+                {loading?<RefreshIcon className="w-[50px] h-[50px] animate-spin"></RefreshIcon>:blogs[0]?.categoryName}
                 <span className="pl-[12px] text-grayLight font-normal">
                   November 22, 2021
                 </span>
@@ -55,13 +55,13 @@ export default function Blog() {
                 Pitch termsheet backing validation focus release.
               </p>
               <div className="flex items-center gap-5 lg:gap-[12px]">
-                {!loading?<img
+                {loading?<RefreshIcon className="w-[50px] h-[50px] animate-spin"></RefreshIcon>:<img
                   src={blogs[0]?.avatar}
                   alt="link image change wait to load image"
                   className="lg:w-[32px] lg:h-[32px]"
-                />:<RefreshIcon className="w-[50px] h-[50px] animate-spin"></RefreshIcon>}
+                />}
                 <p className="sm-max:text-xs lg:text-[16px] lg:leading-[28px]">
-                  {!loading?blogs[0]?.author:<RefreshIcon className="w-[50px] h-[50px] animate-spin"></RefreshIcon>}
+                  {loading?<RefreshIcon className="w-[50px] h-[50px] animate-spin"></RefreshIcon>:blogs[0]?.author}
                 </p>
               </div>
             </div>
@@ -73,9 +73,10 @@ export default function Blog() {
               Latest news
             </p>
             <article className="blog grid  grid-cols-3  gap-24  m-max:grid-cols-2 m-max:gap-10 sm-max:grid-cols-1 sm-max:gap-y-10 lg:gap-x-[50px] lg:gap-y-[80px] ">
-              {!loading?blogs.slice(1, loadMore).map((blog) => {
+              {loading?<RefreshIcon className="w-[50px] h-[50px] animate-spin"></RefreshIcon>:
+              blogs.slice(1, loadMore).map((blog) => {
                 return <LastestNew key={blog?._id} blog={blog} />;
-              }) : <RefreshIcon className="w-[50px] h-[50px] animate-spin"></RefreshIcon>}
+              })}
             </article>
             <div
               onClick={handLoadMore}

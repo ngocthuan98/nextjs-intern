@@ -78,11 +78,10 @@ const HeadingStyle = styled.div`
 
 export default function Heading({ kind, pages }) {
   const [heading, setHeading] = useState([]);
-  const [loading,setLoading] = useState(false);
+  const [loading,setLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
       const data = await pageApi();
-      setLoading(true)
       setHeading(data);
       setLoading(false);
     };
@@ -102,7 +101,7 @@ export default function Heading({ kind, pages }) {
         </p>
       </div>
       <article className="heading-article px-[135px]  sm-max:px-[67px] grid grid-cols-3 m-max:grid-cols-2 gap-24  lg:gap-x-[100px] lg:px-[150px] ">
-        {!loading?heading.slice().reverse().map((data) => {
+        {loading?<RefreshIcon className="w-[50px] h-[50px] animate-spin"></RefreshIcon>:heading.slice().reverse().map((data) => {
             return (
               <div
                 className={`heading-detail flex flex-col justify-start ${
@@ -125,7 +124,7 @@ export default function Heading({ kind, pages }) {
                 </div>
               </div>
             );
-          }):<RefreshIcon className="w-[50px] h-[50px] animate-spin"></RefreshIcon>}
+          })}
       </article>
     </HeadingStyle>
   );

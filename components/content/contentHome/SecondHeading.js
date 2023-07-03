@@ -24,12 +24,11 @@ export default function SecondHeading() {
   const [secondHeading, setSecondHeading] = useState([]);
   const [loadMore, setLoadMore] = useState(4);
   const [disappear, setDisappear] = useState(true);
-  const [loading,setLoading] = useState(false);
+  const [loading,setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       const data = await blogApi();
-      setLoading(true)
       setSecondHeading(data);
       setLoading(false);
     };
@@ -53,7 +52,7 @@ export default function SecondHeading() {
         </p>
       </div>
       <article className="article px-[201px] py-[32px] grid  grid-cols-3  gap-24 sm-max:px-[50px]  m-max:grid-cols-2 m-max:gap-10 lg:gap-x-[50px]  ">
-        {!loading?secondHeading.slice(1, loadMore).map((data) => {
+        {loading?<RefreshIcon className="w-[50px] h-[50px] animate-spin"></RefreshIcon>:secondHeading.slice(1, loadMore).map((data) => {
           return (
             <div className="flex flex-col lg:w-[300px]" key={data?._id}>
               <img src={data?.image} alt="" />
@@ -68,7 +67,7 @@ export default function SecondHeading() {
               </p>
             </div>
           );
-        }):<RefreshIcon className="w-[50px] h-[50px] animate-spin"></RefreshIcon>}
+        })}
       </article>
       <div
         onClick={handLoadMore}
