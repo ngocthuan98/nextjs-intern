@@ -43,7 +43,7 @@ export default function Blog() {
             </p>
           </div>
           <div className="blog-content grid grid-cols-2 gap-x-24 py-16 border-solid border-b border-blueDark sm-max:gap-x-10 sm-max:py-10 lg:py-[72px] lg:gap-x-[100px]">
-            {loading?<RefreshIcon className="w-[50px] h-[50px] animate-spin"></RefreshIcon>:<img src={blogs[0]?.image} alt="link image change wait to load image" className="lg:h-[400px]"/> }
+            {loading?<RefreshIcon className="w-[50px] h-[50px] animate-spin"></RefreshIcon>:<img src={blogs[0]?.image} alt="link image change so no image to show" className="lg:h-[400px]"/> }
             <div className="flex justify-center flex-col gap-4 sm-max:gap-2">
               <p className="font-openSans text-lg leading-7 font-bold text-blueDark sm-max:text-sm lg:text-[16px] lg:leading-[28px]">
                 {loading?<RefreshIcon className="w-[50px] h-[50px] animate-spin"></RefreshIcon>:blogs[0]?.categoryName}
@@ -57,7 +57,7 @@ export default function Blog() {
               <div className="flex items-center gap-5 lg:gap-[12px]">
                 {loading?<RefreshIcon className="w-[50px] h-[50px] animate-spin"></RefreshIcon>:<img
                   src={blogs[0]?.avatar}
-                  alt="link image change wait to load image"
+                  alt="link image change so no image to show"
                   className="lg:w-[32px] lg:h-[32px]"
                 />}
                 <p className="sm-max:text-xs lg:text-[16px] lg:leading-[28px]">

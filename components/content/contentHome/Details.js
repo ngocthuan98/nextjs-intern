@@ -188,7 +188,7 @@ export default function Details() {
               <div className="flex gap-3 mt-8 lg:!gap-[16px] lg:!mt-[40px]">
                 <img
                   src={detail?.icon}
-                  alt="avatar"
+                  alt="link image change so no image to show"
                   width={40}
                   height={40}
                   className="lg:!w-[58px] lg:!h-[58px]"

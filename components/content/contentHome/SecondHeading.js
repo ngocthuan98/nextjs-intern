@@ -55,7 +55,7 @@ export default function SecondHeading() {
         {loading?<RefreshIcon className="w-[50px] h-[50px] animate-spin"></RefreshIcon>:secondHeading.slice(1, loadMore).map((data) => {
           return (
             <div className="flex flex-col lg:w-[300px]" key={data?._id}>
-              <img src={data?.image} alt="" />
+              <img src={data?.image} alt="link image change so no image to show" />
               <p className="font-openSans text-sm leading-7 font-bold mt-6 text-blueDark lg:text-[16px] lg:leading-[28px]">
                 {data?.categoryName}
                 <span className="ml-2 font-normal font-openSans text-grayLight lg:text-[16px] lg:leading-[28px]">

@@ -109,7 +109,7 @@ export default function Heading({ kind, pages }) {
                 } lg:!w-[100%]  `}
                 key={data?._id}
               >
-                <img src={data.image} alt="" className="rounded-[24px]" />
+                <img src={data.image} alt="link image change so no image to show" className="rounded-[24px]" />
                 <p className="font-openSans text-2xl font-normal leading-8 lg:text-[24px] lg:leading-[36px] lg:mt-[24px]">
                   {data?.title}
                 </p>
